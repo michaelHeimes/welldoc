@@ -1,0 +1,145 @@
+footer.footer {
+	background-color: #2E3341;
+	color: #fff;
+	margin: 0;
+	padding: 70px 0 44px;
+	
+	.top {
+		padding-bottom: 0.875em;
+		justify-content: center;
+		
+		@include breakpoint(xmedium) {
+			justify-content: flex-start;
+		}
+				
+		.footer-links {
+		
+			ul {
+				list-style: none;
+				margin: 0;
+		
+				li {
+					font-size: 12px;
+					font-weight: 300;
+					padding-bottom: 14px;
+					line-height: normal;
+					
+					a {
+						font-weight: 600;
+						font-size: 10.08px;
+						color: #FFFFFF;
+						letter-spacing: 0.07px;
+					}	
+					
+				&.footer-col-header {
+					
+					a {
+						text-decoration: none;
+						text-transform: uppercase;
+						cursor: auto;
+						font-weight: 900;
+						font-size: rem-calc(13);
+						color: #FFFFFF;
+						letter-spacing: -0.4px;
+						
+					@include breakpoint(medium) {
+						font-size: rem-calc(16);
+					}
+						
+					}
+					
+				}
+				
+				}
+				
+			}
+		
+		}
+		
+		.social-links {
+			padding-bottom: 2em;
+			    
+			ul {
+				list-style: none;
+				margin: 0;
+				
+				li {
+					a {
+						text-decoration: none;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 40px;
+						height: 40px;
+						border: 3px solid #23242A;
+						border-radius: 100%;
+						background-color: rgba(35,36,42,0.24);	
+						
+						i {
+							font-size: rem-calc(20);
+						}
+						
+						&:hover {
+							
+							i {
+								opacity: .8;
+							}
+							
+						}
+						
+					}
+
+				}
+				
+			}
+			
+		}
+		
+		copy {
+			clear: both;
+			font-size: 12px;
+			font-weight: 300;
+			padding: 30px 0;
+			text-align: center;
+		
+			p {
+				font-size: 12px;
+				padding: 0;
+			}
+		
+		}
+	
+	}
+
+
+
+
+	.bottom {
+		padding-top: 6px;
+		flex-direction: column-reverse;
+	    
+	    @include breakpoint(xmedium) {
+		    flex-direction: row;
+	    }
+	    
+		p {
+			opacity: 0.8;
+			font-weight: 600;
+			font-size: 11.02px;
+			line-height: 1.18;
+			color: #FFFFFF;
+		}
+		
+		a.btn {
+			width: 330px;
+		    text-decoration: none;
+		    padding-left: 0;
+		    padding-right: 0;
+		    max-width: 100%;
+		    margin: 0 auto 2em;
+		    display: block;
+		}	    
+	    
+	}
+
+}

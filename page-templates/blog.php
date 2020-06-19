@@ -8,65 +8,85 @@ Template Post Type: page
 
 <div class="body">
 	
-	<div class="page-head blog-head" style="background-image: url(<?php the_field('banner_image', 'option');?>)">
+	<div class="banner blog-head" style="background-image: url(<?php the_field('banner_image', 'option');?>)">
 		<div class="mask"></div>
-		<div class="container">
-			<div class="text">
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x align-middle align-center">
+			<div class="text cell small-12">
 				<h1><?php the_field('banner_title', 'option');?></h1>
 				<p><?php the_field('banner_text', 'option');?></p>
+			</div>
 			</div>
 		</div>
 	</div>
 	
 	<div class="cat-search-wrap">
 	
-		<div class="container">
+		<div class="grid-container">
+			
+			<div class="grid-x grid-padding-x align-middle">
 				
-			<div id="categories">
-				<label>I'm Interested In</label>
-				<form id="category-select" class="category-select" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-					<?php 
-						$args = array(
-							'show_option_all'    => 'All Articles',
-							'show_option_none'   => '',
-							'option_none_value'  => '-1',
-							'orderby'            => 'ID',
-							'order'              => 'ASC',
-							'show_count'         => 0,
-							'hide_empty'         => 1,
-							'child_of'           => 0,
-							'exclude'            => '',
-							'include'            => '',
-							'echo'               => 1,
-							'selected'           => 0,
-							'hierarchical'       => 0,
-							'name'               => 'cat',
-							'id'                 => '',
-							'class'              => 'postform',
-							'depth'              => 0,
-							'tab_index'          => 0,
-							'taxonomy'           => 'category',
-							'hide_if_empty'      => false,
-							'value_field'	     => 'term_id',
-						);
+				<div id="categories" class="cell shrink xmedium-10">
+					
+					<div class="grid-x grid-padding-x align-middle">
+					
+						<label class="left cell shrink">I'm Interested In</label>
 						
-						wp_dropdown_categories($args); ?>
+						<div class="right cell shrink">
 						
-					<input type="submit" name="submit" value="find" />
-				</form>
-			</div>
+							<form id="category-select" class="category-select grid-x grid-padding-x" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+								
+								<?php 
+									$args = array(
+										'show_option_all'    => 'All Articles',
+										'show_option_none'   => '',
+										'option_none_value'  => '-1',
+										'orderby'            => 'ID',
+										'order'              => 'ASC',
+										'show_count'         => 0,
+										'hide_empty'         => 1,
+										'child_of'           => 0,
+										'exclude'            => '',
+										'include'            => '',
+										'echo'               => 1,
+										'selected'           => 0,
+										'hierarchical'       => 0,
+										'name'               => 'cat',
+										'id'                 => '',
+										'class'              => 'postform cell shrink',
+										'depth'              => 0,
+										'tab_index'          => 0,
+										'taxonomy'           => 'category',
+										'hide_if_empty'      => false,
+										'value_field'	     => 'term_id',
+									);
+									
+									wp_dropdown_categories($args); ?>
+									
+								<input type="submit" name="submit" value="find" class="cell shrink" />
+								
+							</form>
+							
+						</div>
+						
+					</div>
+						
+				</div>
 				
 				
-				<div class="search-r">
-					<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
-					<div class="form">
-						<form method="get" action="<?php bloginfo('url'); ?>/">
-							<input type="text" name="s" placeholder="search">
-							<input type="hidden" name="post_type" value="post">
-							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
+				<div class="cell shrink">
+					<div class="search-r">
+						<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
+						<div class="form">
+							<form method="get" action="<?php bloginfo('url'); ?>/">
+								<input type="text" name="s" placeholder="search">
+								<input type="hidden" name="post_type" value="post">
+								<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</form>
+						</div>
 					</div>
 				</div>
+				
 			</div>
 			
 		</div>
@@ -74,8 +94,9 @@ Template Post Type: page
 	</div>
 
 	<div class="post-blog-row post-row">
-		<div class="container">
-			<section class="post-lists featured">
+		<div class="grid-container">
+			<section class="post-lists featured grid-x grid-padding-x">
+				
 				<?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
 				<?php query_posts( array(
 					'post_type' => 'post',
@@ -89,6 +110,7 @@ Template Post Type: page
 					<?php get_template_part( 'templates/content', 'post' ); ?>
 			
 				<?php endwhile; ?>
+				
 			</section>
 			<div class="blog-pag pagination pagination-full">
 				<?php

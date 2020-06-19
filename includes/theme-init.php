@@ -3,7 +3,7 @@
 global $am_option;
 
 if (!is_admin()){
-// 	add_action( 'wp_enqueue_scripts', 'am_add_javascript' );
+	add_action( 'wp_enqueue_scripts', 'am_add_javascript' );
 	add_action('wp_print_styles', 'am_add_css');
 }
 

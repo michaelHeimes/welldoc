@@ -1046,7 +1046,7 @@ $(document).ready(function() {
 					var stagger_cards = new TimelineMax();
 				
 				stagger_cards
-				.staggerFromTo(".our-team .our-team-text ul li", 1, {y: 70, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: Back.easeOut}, 0.15);
+				.staggerFromTo(".our-team-text ul li", 1, {y: 70, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: Back.easeOut}, 0.15);
 				
 					var scene = new ScrollMagic.Scene({
 			        triggerElement: '.our-team-text ul',

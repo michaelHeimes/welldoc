@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="317px" viewBox="0 0 1024 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>cost savings background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="63" cy="63" r="63"></circle>
+        <filter x="-1.6%" y="-1.6%" width="103.2%" height="103.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="75.2220654%" y1="10.1168685%" x2="75.2220631%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" stop-opacity="0.893483922" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <path d="M121.235294,96 L105,108 L88.7647059,96 L8,96 C3.581722,96 5.41083001e-16,92.418278 0,88 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 L195,0 C199.418278,-8.11624501e-16 203,3.581722 203,8 L203,88 C203,92.418278 199.418278,96 195,96 L121.235294,96 Z" id="path-4"></path>
+        <filter x="-3.4%" y="-4.6%" width="106.9%" height="113.0%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M148.235294,90 L132,102 L115.764706,90 L8,90 C3.581722,90 5.41083001e-16,86.418278 0,82 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 L247,0 C251.418278,-8.11624501e-16 255,3.581722 255,8 L255,82 C255,86.418278 251.418278,90 247,90 L148.235294,90 Z" id="path-6"></path>
+        <filter x="-2.7%" y="-8.8%" width="105.5%" height="113.7%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="outcomes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fancy_impactv4" transform="translate(0.000000, -3507.000000)">
+            <g id="cost-savings" transform="translate(-2.000000, 3283.000000)">
+                <g id="cost-savings-background" transform="translate(-73.000000, 224.000000)">
+                    <g id="roi-icon" transform="translate(882.000000, 0.000000)">
+                        <g id="Oval-Copy-5">
+                            <use fill="#016ECD" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="3-5x-ROI" font-family="MuseoSans-700, Museo Sans" font-size="18" font-weight="500" letter-spacing="-0.1005" fill="#FFFFFF">
+                            <tspan x="44.085" y="59">3-5x </tspan>
+                            <tspan x="47.13975" y="81">ROI</tspan>
+                        </text>
+                    </g>
+                    <path d="M455.237242,549.804293 C48.0370375,368.693304 -85.9891086,233.19292 53.1588035,143.303138 C261.880672,8.46846682 456.912288,135.757065 573.832145,208.241177 C690.752001,280.72529 840.878495,285.312352 984.805986,208.241177 C1200.73135,92.6161393 1415.46269,103.113518 1629,239.733312 L1629,549.804293 L455.237242,549.804293 Z" id="Combined-Shape-Copy" fill="url(#linearGradient-3)" style="mix-blend-mode: overlay;" opacity="0.4" transform="translate(814.500000, 316.902147) scale(-1, 1) translate(-814.500000, -316.902147) "></path>
+                    <path d="M455.237242,549.804293 C48.0370375,368.693304 -85.9891086,233.19292 53.1588035,143.303138 C261.880672,8.46846682 456.912288,135.757065 573.832145,208.241177 C690.752001,280.72529 840.878495,285.312352 984.805986,208.241177 C1200.73135,92.6161393 1415.46269,103.113518 1629,239.733312 L1629,549.804293 L455.237242,549.804293 Z" id="Combined-Shape-Copy" fill="#92E0FA" transform="translate(814.500000, 316.902147) scale(-1, 1) translate(-814.500000, -316.902147) "></path>
+                    <path d="M339.646501,233.149785 C357.590874,226.082526 375.515029,217.788376 393.344059,208.241177 C495.1252,153.738789 596.641037,127.25972 697.891572,128.80397" id="Combined-Shape-Copy" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" transform="translate(518.769036, 180.944966) scale(-1, 1) translate(-518.769036, -180.944966) "></path>
+                    <g id="cost-savings" transform="translate(591.000000, 104.000000)">
+                        <g id="Combined-Shape">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        </g>
+                        <g id="3-month-marker" transform="translate(11.000000, 14.000000)">
+                            <text id="$3,125" font-family="MuseoSans-500, Museo Sans" font-size="27" font-weight="normal" letter-spacing="-0.15075" fill="#016ECD">
+                                <tspan x="50.93875" y="64">$3,125</tspan>
+                            </text>
+                            <text id="Avg.-Annual-Cost-Sav" font-family="MuseoSans-300, Museo Sans" font-size="14" font-weight="300" fill="#00181B">
+                                <tspan x="8.108" y="13">Avg. Annual Cost </tspan>
+                                <tspan x="120.29" y="13" font-family="MuseoSans-700, Museo Sans" font-weight="500">Savings</tspan>
+                                <tspan x="169.892" y="13"> </tspan>
+                                <tspan x="17.341" y="30">Per User With BlueStar</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <circle id="Oval-Copy-3" fill="#FFFFFF" cx="339.5" cy="128.5" r="9.5"></circle>
+                    <circle id="Oval-Copy-6" fill="#FFFFFF" cx="696.5" cy="233.5" r="9.5"></circle>
+                    <g id="3-month-marker" transform="translate(206.000000, 9.000000)">
+                        <g id="Group-2">
+                            <g id="Combined-Shape">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+                                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-6"></use>
+                            </g>
+                            <text id="$16,090" font-family="MuseoSans-500, Museo Sans" font-size="27" font-weight="normal" fill="#016ECD">
+                                <tspan x="78.767" y="74">$16,090</tspan>
+                            </text>
+                        </g>
+                        <text id="Avg.-Annual-Medical" font-family="MuseoSans-300, Museo Sans" font-size="14" font-weight="300" fill="#00181B">
+                            <tspan x="38.645" y="25">Avg. Annual Medical Cost of </tspan>
+                            <tspan x="37.826" y="42">Person with Type 2 Diabetes</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

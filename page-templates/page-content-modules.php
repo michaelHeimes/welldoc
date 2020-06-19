@@ -10,7 +10,6 @@ Template Name: Content Modules
 	<?php if ( have_rows('content_modules') ) : ?>
 	<?php while ( have_rows('content_modules') ) : ?> 
 		<?php the_row(); ?>
-		
 
 		<?php if ( get_row_layout() == 'resources' ) : ?>
 			<div class="<?php the_sub_field('custom_class');?>">
@@ -1495,7 +1494,7 @@ Template Name: Content Modules
 		<?php endif; ?>
 		
 		<?php if ( get_row_layout() == 'our_team' ) : ?>
-		<div class="our-team container <?php the_sub_field('custom_class');?>">
+		<div class="our-team container">
 			<?php if ( $background_image = get_sub_field('background_image') ) : ?>
 			<div class="our-team-img">
 				<div style="background-image:url(<?php echo $background_image['url']; ?>);"></div>
