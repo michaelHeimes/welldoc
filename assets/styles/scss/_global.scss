@@ -100,6 +100,38 @@ POSTS & CONTENT STYLES
 }
 
 /*********************
+PIPES
+*********************/
+.post-pipe,
+.center-col-text h2:after,
+.single_text_module h2:after,
+.image-text-section-h2-pipe,
+.text-section-h2-pipe {
+    content: '';
+    height: 14px;
+    background-color: #92E0FA;
+    width: 141px;
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+/*********************
+CAT TAGS
+*********************/
+.cat-wrap a {
+    background: rgba(1,110,205,0.57);
+    border-radius: 11.5px;
+    font-weight: 700;
+    font-size: 11px;
+    color: #FFFFFF !important;
+    padding: 5px 14.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/*********************
 BUTTONS
 *********************/
 .btn {	

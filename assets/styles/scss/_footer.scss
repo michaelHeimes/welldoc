@@ -62,8 +62,18 @@ footer.footer {
 			ul {
 				list-style: none;
 				margin: 0;
+				justify-content: center;
+				
+				@include breakpoint(xmedium) {
+				    justify-content: flex-start;
+				}
 				
 				li {
+					@include breakpoint(xmedium) {
+						padding-left: 0;
+					}
+					
+					
 					a {
 						text-decoration: none;
 						display: flex;
@@ -130,15 +140,25 @@ footer.footer {
 			color: #FFFFFF;
 		}
 		
-		a.btn {
-			width: 330px;
-		    text-decoration: none;
-		    padding-left: 0;
-		    padding-right: 0;
-		    max-width: 100%;
-		    margin: 0 auto 2em;
-		    display: block;
-		}	    
+		.right {
+			text-align: center;
+			
+			@include breakpoint(xmedium) {
+				text-align: left;
+			}
+		
+			a.btn {
+				width: 330px;
+			    text-decoration: none;
+			    padding-left: 0;
+			    padding-right: 0;
+			    max-width: 100%;
+			    margin: 0 auto 2em;
+			    display: inline-block;
+			    
+			}
+		
+		}    
 	    
 	}
 

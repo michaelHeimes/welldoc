@@ -1,0 +1,507 @@
+.page-template-blog,
+.archive {
+
+	.banner.blog-head {
+		
+		.mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: #000;
+			opacity: 0.63;
+		}
+			
+		.grid-container .grid-x {
+			position: relative;
+			min-height: 267px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+	
+			.text {
+				max-width: 600px;
+				margin: auto;
+				text-align: center;
+				
+				h1 {
+					font-weight: 900;
+					font-size: 48px;
+					letter-spacing: -0.53px;
+					line-height: 57px;
+				}
+	
+				h2 {
+				    font-size: 22px;
+				    padding-top: 8px;
+				}
+	
+				p {
+					font-weight: 500;
+					font-size: 21px;
+					letter-spacing: 0.38px;
+					line-height: 31px;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	.cat-search-wrap {
+		font-weight: 700;
+		font-size: 14px;
+		letter-spacing: 0.01px;
+		border: 1px solid #979797;
+		padding-top: 6px;
+	    padding-bottom: 6px;
+	    min-height: 50px;
+		
+		.grid-container {
+			>.grid-x {
+				justify-content: space-between;
+		    	
+				#categories {
+					>.grid-x {
+						.right {
+							form#category-select {
+								max-width: 100%;
+								text-align: right;
+								select {
+									margin-bottom: 0;
+								    background: transparent;
+								    text-align-last: center;
+								    border: 0;
+								    border-bottom: 1px solid #979797;
+								    border-radius: 0;
+								    background-image: url(../images/blog-cat-filter-down.svg);
+								    background-repeat: no-repeat;
+								    background-position: 100% 50%;
+								    appearance: none;
+								    
+								    @include breakpoint(medium) {
+									    margin: 0 0 0 12px;
+								    }
+
+								    @include breakpoint(xmedium) {
+									    flex-wrap: nowrap;
+									    margin: 0 0 0 41px;
+								    }
+								 
+								}
+								
+							   input[type="submit"] {
+									border: 1px solid #979797;
+								    border-radius: 8px;
+								    line-height: 28px;
+								    padding: 0 1.689em;
+								    text-transform: uppercase;
+								}
+								
+							}	
+						}
+					}
+				}
+				
+				ul#cat-links {
+					list-style: none;
+					margin: 0;
+					flex-direction: column;
+					
+					@include breakpoint(medium) {
+						flex-direction: row;
+					}
+					
+					li {
+						font-weight: 700;
+						font-size: rem-calc(14px);
+						line-height: 1.214;
+						color: $black;
+						margin-top: 10px;
+						margin-bottom: 10px;
+						
+						a {
+							transition: color 0.25s ease;
+							
+							&:hover {
+								color: $brand-blue;
+							}	
+							
+						}
+						
+					&.active {
+							a {
+								color: $brand-blue;
+								text-decoration: underline;
+							}
+						}
+						
+					}
+
+				}
+				
+				
+				
+				.search-r {
+					margin: 0;
+					position: relative;
+					width: 100%;
+					float: right;
+				    font-size: 18px;
+				    z-index: 10;
+										
+					@media screen and (min-width: 470px) {
+						width: auto;
+					}
+					
+					.trigger {
+						margin: 0;
+					    padding-right: 0;
+					    top: 1px;
+					    width: 37px;
+					    cursor: pointer;
+					    height: 30px;
+					    line-height: 28px;
+					    z-index: 9;
+					    position: relative;
+					    text-align: center;
+					    float: right;
+					    opacity: 1;
+					}
+					
+					.form {
+						height: 100%;
+						background: #fff;
+						width: 38px;
+						
+						form {
+							height: 100%;
+							
+							input[type="text"] {
+								width: 100%;
+							    height: 100%;
+							    border: 0;
+							    background: none;
+							    color: #00181b;
+							    padding: 0 30px 0 10px;
+							}
+							
+						}
+					
+						button {
+						    position: absolute;
+						    top: 1px;
+						    right: 0;
+						    color: #00181b;
+						    font-size: 18px;
+						    margin: -1px 0;
+						    float: right;
+						    width: 35px;
+						    height: 28px;
+						    line-height: 28px;
+						    opacity: 0;
+						    text-align: center;
+						}
+												
+					}
+				
+				&.active {
+					
+					.trigger {
+						opacity: 0;
+					}
+					
+					button {
+						opacity: 1;
+					}
+					
+					.form {
+						width: 224px;
+					}
+					
+					
+				}
+					
+				}
+				
+
+				
+			}
+		}
+		
+	}
+	
+	
+	.post-lists {
+		padding-top: 30px;
+		min-height: 580px;		
+	}
+	
+	.blog-pag {
+	
+		&.pagination-full {
+			min-width: 100%;
+			text-align: center;
+			padding: 46px 0 24px;
+		    margin: 0;
+	
+
+	
+			.page-numbers {
+				width: 40px;
+				height: 40px;
+				display: inline-flex;
+		        justify-content: center;
+		        align-items: center;
+				color: $white;
+				font-weight: 900;
+				background: $brand-blue;
+				border-radius: 100%;
+				font-size: rem-calc(24);
+				margin: 0 10px;
+				border: 3px solid $brand-blue;
+				
+				&:hover,
+				&.current {
+					color: $brand-blue;
+					background: $white;
+				}
+				
+				&.next,
+				&.previous {
+					display: none;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+/* Single Blog Post */
+.single {
+	
+	.banner.blog-head.single-blog-head {
+		
+		.grid-container .grid-x {
+			position: relative;
+			min-height: 267px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+
+			.text {
+				background: #fff;
+				color: #23242A;
+				text-align: left;
+				border-radius: 4px;
+				margin: 0 0 -38px 1em;
+				padding: 25px 30px 0;
+				max-width: 580px;
+				
+				a {
+					font-weight: 700;
+				    font-size: rem-calc(14);
+				    text-transform: uppercase;
+				    color: $brand-blue;
+				    letter-spacing: 0;
+				}
+				
+				h1 {
+					font-weight: 900;
+				    font-size: rem-clac(48);
+				    letter-spacing: -0.53px;
+				    line-height: 57px;
+				}
+				
+				.read-time span {
+					font-weight: 300;
+					font-size: rem-calc(12);
+					text-transform: uppercase;
+					letter-spacing: 0;
+				}
+				
+			}
+			
+			.post-pipe {
+			    margin-bottom: 17px;
+			}
+
+		}
+		
+	}
+
+
+
+	.blog-posts {
+		padding-top: 46px;
+	    padding-right: 60px;
+	    position: relative;
+		
+		@include breakpoint (medium) {
+			padding-top: 81px;
+		}
+		
+		.share {
+		    position: absolute;
+		    top: 53px;
+		    right: 0;
+		    border: 1px solid #D3D3D3;
+		    margin: 0 0 5px;
+		    overflow: hidden;
+		    
+		    &:after {
+				display: none;
+			}
+			
+			ul {
+				list-style: none;
+				margin: 0;
+				
+				li {
+					a {
+						font-size: rem-calc(20);
+					    color: $brand-blue;
+					    min-width: 45px;
+					    min-height: 45px;
+					    text-decoration: none;
+					    display: flex;
+					    justify-content: center;
+					    align-items: center;
+					    border-top: 1px solid #D3D3D3;
+					    
+					    @include breakpoint (medium) {
+						    min-width: 85px;
+						    min-height: 85px;
+						    font-size: rem-calc(38);
+					    }
+					    
+					}
+				}
+				
+			}
+		    
+		}
+		
+		.entry {
+			max-width: 837px;
+			padding-left: 0px;
+			padding-bottom: 0.4em;
+			
+			@include breakpoint (medium) {
+				padding-left: 44px;
+				padding-right: 120px;				
+			}
+			
+			.cat-wrap {
+			    padding-top: 41px;
+			    padding-bottom: 36px;
+			}
+			
+			.disclaimer {
+				font-weight: 300;
+				font-size: 14px;
+				letter-spacing: -0.16px;
+			}
+			
+		}
+	}
+	
+	.related-posts > .container {
+		padding-top: 0.65em;
+		border-top: 1px solid #D3D3D3;
+	}
+
+}
+
+
+
+
+
+/*
+.post-row.blog-post-row .share li {
+	float: none;
+	padding: 0;
+}
+*/
+
+
+
+.post-row.blog-post-row .share a {
+	font-size: 20px;
+    color: #016ECD;
+    min-width: 45px;
+    min-height: 45px;
+    text-decoration: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-top: 1px solid #D3D3D3;
+}
+.post-row.blog-post-row .share li:first-child a {
+	border-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+	.post-row.blog-post-row {
+		padding-top: 81px;
+	}
+	
+
+	
+	.post-row.blog-post-row .share a {
+	    min-width: 85px;
+	    min-height: 85px;
+		font-size: 38px;
+	}	
+}
+
+
+
+
+
+.related-posts {
+    padding-bottom: 7.8em;
+}
+
+.related-posts h2 {
+	font-weight: 900;
+	font-size: 21px;
+	letter-spacing: 0;
+	text-align: center;
+	padding-top: 1.45em;
+    padding-bottom: 1.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

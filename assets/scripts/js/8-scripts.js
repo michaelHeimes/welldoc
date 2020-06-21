@@ -238,14 +238,16 @@ $(document).ready(function() {
 			return false;
 		});
 				
-		var $blogSearch = $('.search-r');
-		var $searchTrigger = $($blogSearch).find('.trigger');
-		
-		$(document).on('click', $searchTrigger, function() {
-			console.log('clicked');
-			$(this).parent().toggleClass("active").find("input").focus();
-// 			return false;
-		});
+				
+		if ($('.search-r').length) {
+			var $blogSearch = $('.search-r');
+			var $searchTrigger = $($blogSearch).find('.trigger');
+			
+			$($blogSearch).on('click', $searchTrigger, function() {
+				$(this).toggleClass("active").find("input").focus();
+				return false;
+			});
+		}
 		
 		$(".solutions-row article a").click(function() {
 			$(".solutions-row article").removeClass("slick-center");

@@ -1,44 +1,19 @@
 <?php get_header(); ?>
 
+
 	<?php if(is_tax('type-news')):?>
 	
 		<div class="page-head">
-			<div class="container">
-<!--
-				<?php
-					if ( function_exists('yoast_breadcrumb') ) {
-						yoast_breadcrumb('<div class="breadcrumbs">','</div>');
-					}
-				?>
--->
-				
+			<div class="container">		
 				<div class="breadcrumbs"><span><span><a href="<?php echo home_url();?>">Home</a> // <a href="<?php echo home_url();?>/latest-news">Latest News</a> // <span class="breadcrumb_last" aria-current="page"><?php echo the_archive_title();?></span></span></span></div>
-
+				
 				<h1><?php echo the_archive_title();?></h1>
-
 			</div>
 		</div>
 	
 		<div class="sub-cat">
 			<div class="container">
-<!--
-				<ul>
-					<li class="current"><a href="<?php bloginfo('url'); ?>/latest-news/">News</a></li>
-					<li><a href="<?php bloginfo('url'); ?>/upcoming-events/">Events</a></li>
-				</ul>
--->
-	<!--
-				<div class="search-r">
-					<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
-					<div class="form">
-						<form method="get" action="<?php bloginfo('url'); ?>/">
-							<input type="text" name="s" placeholder="search">
-							<input type="hidden" name="post_type" value="news">
-							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
-					</div>
-				</div>
-	-->
+
 			</div>
 		</div>
 		<?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
@@ -105,28 +80,9 @@
 					</section>
 					
 					<?php global $wp_query; ?>
-					<div class="pagination pagination-full <?php echo $wp_query->max_num_pages; ?>">
-						<?php
-							$args = array(
-								'base'               => get_pagenum_link(1) . '%_%',
-								'format'             => 'page/%#%',
-								'total'              => $wp_query->max_num_pages,
-								'current'            => $paged,
-								'show_all'           => false,
-								'end_size'           => 2,
-								'mid_size'           => 2,
-								'prev_next'          => true,
-								'prev_text'          => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-								'next_text'          => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-								'type'               => 'plain',
-								'add_args'           => false,
-								'add_fragment'       => '',
-								'before_page_number' => '',
-								'after_page_number'  => ''
-							); 
-							echo paginate_links( $args );	
-						?>
-					</div>
+					
+					<?php get_template_part( 'parts/nav', 'blog-pagination' ); ?>
+
 				</div>
 				
 				<aside class="sidebar">
@@ -137,92 +93,100 @@
 		
 	<?php else:?>
 
+
 		<?php if(is_post_type_archive('insights') || is_tax('resource-audience') || is_tax('type-insights')):?>
 	
-			<div class="page-head blog-head" style="background-image: url(<?php the_field('resource_library_banner_image', 'option');?>)">
+			<div class="banner blog-head" style="background-image: url(<?php the_field('resource_library_banner_image', 'option');?>)">
 				<div class="mask"></div>
-				<div class="container">
-					<div class="text">
-						<h1><?php the_field('resource_library_banner_title', 'option');?></h1>
+				<div class="grid-container">
+					<div class="grid-x grid-padding-x align-middle align-center">
+						<div class="text cell small-12">
+							
+							<h1><?php the_field('resource_library_banner_title', 'option');?></h1>
+							
+							<?php if (is_tax('resource-audience')):?>
+							
+							<h2><?php echo the_archive_title();?></h2>
+											
+							<?php elseif (is_tax('type-insights')):?>
+							
+							<h2>Tagged In: <?php echo the_archive_title();?></h2>
+							
+							<?php else:?>		
+									
+								<p><?php the_field('resource_library_banner_text', 'option');?></p>
+							
+							<?php endif;?>
 						
-						<?php if (is_tax('resource-audience')):?>
-						
-						<h2><?php echo the_archive_title();?></h2>
-										
-						<?php elseif (is_tax('type-insights')):?>
-						
-						<h2>Tagged In: <?php echo the_archive_title();?></h2>
-						
-						<?php else:?>		
-								
-							<p><?php the_field('resource_library_banner_text', 'option');?></p>
-						
-						<?php endif;?>
-						
+						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="cat-search-wrap">
 				
-				<div class="container">
+				<div class="grid-container">
+					
+					<div class="grid-x grid-padding-x align-middle">
 			
-					<div id="categories">
-										
-						<ul id="cat-links">
-							<?php
-						  $categories = get_categories(array(
-						    'show_option_all'    => '',
-						    'orderby'            => 'name',
-						    'order'              => 'ASC',
-						    'style'              => 'list',
-						    'show_count'         => 0,
-						    'hide_empty'         => 1,
-						    'use_desc_for_title' => 1,
-						    'child_of'           => 0,
-						    'feed'               => '',
-						    'feed_type'          => '',
-						    'feed_image'         => '',
-						    'exclude_tree'       => '',
-						    'include'            => '',
-						    'hierarchical'       => true,
-						    'title_li'           => __( 'Categories' ),
-						    'show_option_none'   => __('No categories'),
-						    'number'             => NULL,
-						    'echo'               => 1,
-						    'depth'              => 0,
-						    'current_category'   => 0,
-						    'pad_counts'         => 0,
-						    'taxonomy'           => 'resource-audience',
-						    'walker'             => 'Walker_Category' 
-						    ));
-							foreach ( $categories as $category ) :?>
-						  
-								<?php  $category_link = sprintf( 
-						        '<a href="%1$s" alt="%2$s">%3$s</a>',
-						        esc_url( get_category_link( $category->term_id ) ),
-						        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
-						        esc_html( $category->name )
-								);?>
-						
-								<li<?php if(get_the_archive_title() == ($category->name)):?> class="active"<?php endif;?>><?php echo $category_link;?></li>
-						  
-							<?php endforeach;?>
-						
-						</ul>
-						
-					</div>
-						
-						
-					<div class="search-r resource">
-						<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
-						
-						<div class="form">
-							<form method="get" action="<?php bloginfo('url'); ?>/">
-								<input type="text" name="s" placeholder="search">
-								<input type="hidden" name="post_type" value="resources">
-								<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-							</form>
+						<div id="categories" class="cell small-6 medium-8 large-7">
+											
+							<ul id="cat-links" class="grid-x grid-padding-x align-justify">
+								<?php
+							  $categories = get_categories(array(
+							    'show_option_all'    => '',
+							    'orderby'            => 'name',
+							    'order'              => 'ASC',
+							    'style'              => 'list',
+							    'show_count'         => 0,
+							    'hide_empty'         => 1,
+							    'use_desc_for_title' => 1,
+							    'child_of'           => 0,
+							    'feed'               => '',
+							    'feed_type'          => '',
+							    'feed_image'         => '',
+							    'exclude_tree'       => '',
+							    'include'            => '',
+							    'hierarchical'       => true,
+							    'title_li'           => __( 'Categories' ),
+							    'show_option_none'   => __('No categories'),
+							    'number'             => NULL,
+							    'echo'               => 1,
+							    'depth'              => 0,
+							    'current_category'   => 0,
+							    'pad_counts'         => 0,
+							    'taxonomy'           => 'resource-audience',
+							    'walker'             => 'Walker_Category' 
+							    ));
+								foreach ( $categories as $category ) :?>
+							  
+									<?php  $category_link = sprintf( 
+							        '<a href="%1$s" alt="%2$s">%3$s</a>',
+							        esc_url( get_category_link( $category->term_id ) ),
+							        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+							        esc_html( $category->name )
+									);?>
+							
+									<li<?php if(get_the_archive_title() == ($category->name)):?> class="active"<?php endif;?>><?php echo $category_link;?></li>
+							  
+								<?php endforeach;?>
+							
+							</ul>
+							
+						</div>
+							
+							
+						<div class="cell shrink">
+							<div class="search-r">
+								<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
+								<div class="form">
+									<form method="get" action="<?php bloginfo('url'); ?>/">
+										<input type="text" name="s" placeholder="search">
+										<input type="hidden" name="post_type" value="post">
+										<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+									</form>
+								</div>
+							</div>
 						</div>
 						
 					</div>
@@ -235,82 +199,103 @@
 		<?php else:?>
 		
 			
-			<div class="page-head blog-head" style="background-image: url(<?php the_field('banner_image', 'option');?>)">
+			<div class="banner blog-head" style="background-image: url(<?php the_field('banner_image', 'option');?>)">
 				<div class="mask"></div>
-				<div class="container">
-					<div class="text">
-						<h1><?php the_field('banner_title', 'option');?></h1>
+				<div class="grid-container">
+					<div class="grid-x grid-padding-x align-middle align-center">
+						<div class="text cell small-12">
+							
+							<h1><?php the_field('banner_title', 'option');?></h1>
+	
+											
+							<?php if (is_category()):?>
+							
+							<h2>Tagged In: <?php echo the_archive_title();?></h2>
+							
+							<?php else:?>		
+									
+								<p><?php the_field('resource_library_banner_text', 'option');?></p>
+							
+							<?php endif;?>
 
-										
-						<?php if (is_category()):?>
-						
-						<h2>Tagged In: <?php echo the_archive_title();?></h2>
-						
-						<?php else:?>		
-								
-							<p><?php the_field('resource_library_banner_text', 'option');?></p>
-						
-						<?php endif;?>
-
-
+						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="cat-search-wrap">
 			
-				<div class="container">
+				<div class="grid-container">
+					
+					<div class="grid-x grid-padding-x align-middle">
 						
-					<div id="categories">
-						<label>I'm Interested In</label>
-						<form id="category-select" class="category-select" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-							<?php 
-								$args = array(
-									'show_option_all'    => 'All Articles',
-									'show_option_none'   => '',
-									'option_none_value'  => '-1',
-									'orderby'            => 'ID',
-									'order'              => 'ASC',
-									'show_count'         => 0,
-									'hide_empty'         => 1,
-									'child_of'           => 0,
-									'exclude'            => '',
-									'include'            => '',
-									'echo'               => 1,
-									'selected'           => 0,
-									'hierarchical'       => 0,
-									'name'               => 'cat',
-									'id'                 => '',
-									'class'              => 'postform',
-									'depth'              => 0,
-									'tab_index'          => 0,
-									'taxonomy'           => 'category',
-									'hide_if_empty'      => false,
-									'value_field'	     => 'term_id',
-								);
+						<div id="categories" class="cell shrink xmedium-10">
+							
+							<div class="grid-x grid-padding-x align-middle">
+							
+								<label class="left cell shrink">I'm Interested In</label>
 								
-								wp_dropdown_categories($args); ?>
+								<div class="right cell shrink">
 								
-							<input type="submit" name="submit" value="find" />
-						</form>
-					</div>
+									<form id="category-select" class="category-select grid-x grid-padding-x" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+										
+										<?php 
+											$args = array(
+												'show_option_all'    => 'All Articles',
+												'show_option_none'   => '',
+												'option_none_value'  => '-1',
+												'orderby'            => 'ID',
+												'order'              => 'ASC',
+												'show_count'         => 0,
+												'hide_empty'         => 1,
+												'child_of'           => 0,
+												'exclude'            => '',
+												'include'            => '',
+												'echo'               => 1,
+												'selected'           => 0,
+												'hierarchical'       => 0,
+												'name'               => 'cat',
+												'id'                 => '',
+												'class'              => 'postform cell shrink',
+												'depth'              => 0,
+												'tab_index'          => 0,
+												'taxonomy'           => 'category',
+												'hide_if_empty'      => false,
+												'value_field'	     => 'term_id',
+											);
+											
+											wp_dropdown_categories($args); ?>
+											
+										<input type="submit" name="submit" value="find" class="cell shrink" />
+										
+									</form>
+									
+								</div>
+								
+							</div>
+								
+						</div>
 						
 						
-						<div class="search-r">
-							<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
-							<div class="form">
-								<form method="get" action="<?php bloginfo('url'); ?>/">
-									<input type="text" name="s" placeholder="search">
-									<input type="hidden" name="post_type" value="post">
-									<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-								</form>
+						<div class="cell shrink">
+							<div class="search-r">
+								<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
+								<div class="form">
+									<form method="get" action="<?php bloginfo('url'); ?>/">
+										<input type="text" name="s" placeholder="search">
+										<input type="hidden" name="post_type" value="post">
+										<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+									</form>
+								</div>
 							</div>
 						</div>
+						
 					</div>
 					
 				</div>
 					
 			</div>
+			
 		
 		<?php endif;?>
 		
@@ -319,61 +304,40 @@
 		
 	
 		<div class="post-blog-row post-row">
-			<div class="container">
-				<section class="post-lists featured">
-	
-	
-	<!-- 		<?php breadcrumb_trail('echo=1&separator=/'); ?> -->
-	
-			<?php if (have_posts()) : ?>
-	
-			<?php while (have_posts()) : the_post(); ?>
-			
-				<?php if(is_post_type_archive('insights') || is_tax('resource-audience') || is_tax('type-insights')):?>
-				
-					<?php get_template_part( 'templates/content', 'insight' ); ?>
-				
-				<?php else:?>
+			<div class="grid-container">
+				<section class="post-lists featured grid-x grid-padding-x">
+
+					<?php if(is_post_type_archive('insights') || is_tax('resource-audience') || is_tax('type-insights')):?>
+						
+						
+				    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					 
+							<?php get_template_part( 'templates/loop', 'insight' ); ?>
+						    
+						<?php endwhile; ?>	
 		
-					<?php get_template_part( 'templates/content', 'post' ); ?>
+						<?php endif; ?>	
+						
+						
+					<?php else:?>
 					
-				<?php endif;?>
-							
-				
-			<?php endwhile; ?>
-			
-	
-	
-			<div class="blog-pag pagination pagination-full">
-				<?php
-					global $wp_query;
-					$args = array(
-						'base'               => get_pagenum_link(1) . '%_%',
-						'format'             => 'page/%#%',
-						'total'              => $wp_query->max_num_pages,
-						'current'            => $paged,
-						'show_all'           => false,
-						'end_size'           => 2,
-						'mid_size'           => 2,
-						'prev_next'          => true,
-						'prev_text'          => '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
-						'next_text'          => '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
-						'type'               => 'plain',
-						'add_args'           => false,
-						'add_fragment'       => '',
-						'before_page_number' => '',
-						'after_page_number'  => ''
-					); 
-					echo paginate_links( $args );	
-				?>
-			</div>
-	
-	
-		<?php else : ?>
-			<?php get_template_part( 'templates/content', 'none' ); ?>
-		<?php endif; ?>
-	
+					
+				    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					 
+							<?php get_template_part( 'templates/loop', 'post' ); ?>
+						    
+						<?php endwhile; ?>	
+		
+						<?php endif; ?>	
+					
+					
+					<?php endif;?>
+
 				</section>
+	
+				<?php get_template_part( 'parts/nav', 'blog-pagination' ); ?>
+
+	
 			</div>
 		</div>
 	

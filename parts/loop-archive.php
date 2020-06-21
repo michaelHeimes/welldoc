@@ -1,11 +1,3 @@
-<?php
-/**
- * Template part for displaying posts
- *
- * Used for single, index, archive, search.
- */
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">					
 	
 	<header class="article-header">

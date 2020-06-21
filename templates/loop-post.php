@@ -45,42 +45,43 @@
 	</div>
 		
 </article>
-<?php if( $wp_query->current_post == 1 ):?>
-<article class="facebook-box cell small-12 medium-6 xmedium-4">
-	
-	<div class="inner">
-	
-		<h2>Follow Us On Facebook</h2>
-		
-		<p><?php the_field('facebook_follow_copy', 'option');?></p>
-	
-		<?php if ( $social_facebook_url = get_field( 'social_facebook_url', 'option' ) ) : ?>
-		<div class="text-center">		
-			<a class="btn outline" href="<?php echo $social_facebook_url; ?>" target="_blank">
-				<i class="fab fa-facebook"></i> Like us on Facebook
-			</a>
-		</div>
-		<?php endif; ?>
-		
-		<div class="resources-link-wrap">
-			
-			<div class="copy"><span><?php the_field('resources_link_copy', 'option');?></span></div>
 
-			<?php 
-			$link = get_field('resources_link', 'option' );
-			if( $link ): 
-			    $link_url = $link['url'];
-			    $link_title = $link['title'];
-			    $link_target = $link['target'] ? $link['target'] : '_self';
-			    ?>
-			    <div class="text-right">
-			    	<a class="link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right-white.svg"/></a>
-			    </div>
+<?php if( $wp_query->current_post == 1 ):?>
+	<article class="facebook-box archive-cta-box cell small-12 medium-6 xmedium-4">
+		
+		<div class="inner">
+		
+			<h2>Follow Us On Facebook</h2>
+			
+			<p><?php the_field('facebook_follow_copy', 'option');?></p>
+		
+			<?php if ( $social_facebook_url = get_field( 'social_facebook_url', 'option' ) ) : ?>
+			<div class="text-center">		
+				<a class="btn outline" href="<?php echo $social_facebook_url; ?>" target="_blank">
+					<i class="fab fa-facebook"></i> Like us on Facebook
+				</a>
+			</div>
 			<?php endif; ?>
-							
-		</div>
+			
+			<div class="resources-link-wrap">
 				
-	</div>
+				<div class="copy"><span><?php the_field('resources_link_copy', 'option');?></span></div>
 	
-</article>
+				<?php 
+				$link = get_field('resources_link', 'option' );
+				if( $link ): 
+				    $link_url = $link['url'];
+				    $link_title = $link['title'];
+				    $link_target = $link['target'] ? $link['target'] : '_self';
+				    ?>
+				    <div class="text-right">
+				    	<a class="link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?> <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right-white.svg"/></a>
+				    </div>
+				<?php endif; ?>
+								
+			</div>
+					
+		</div>
+		
+	</article>
 <?php endif;?>

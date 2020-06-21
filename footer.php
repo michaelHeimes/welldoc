@@ -31,7 +31,7 @@
 				
 			<div class="social-links cell small-12 medium-12 xmedium-5 large-4">
 				
-				<ul class="grid-x grid-padding-x align-center">
+				<ul class="grid-x grid-padding-x">
 					<?php if ( $social_linkedin_url = get_field( 'social_linkedin_url', 'option' ) ) : ?>
 					<li class="cell shrink"><a href="<?php echo $social_linkedin_url; ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
 					<?php endif; ?>
