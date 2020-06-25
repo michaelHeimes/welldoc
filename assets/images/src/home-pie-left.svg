@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="170px" height="171px" viewBox="0 0 170 171" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <path d="M28.3559259,0.4225 C70.9708451,0.4225 105.520074,35.2276986 105.520074,78.1613015 C105.520074,121.097301 70.9708451,155.9025 28.3559259,155.9025 C18.3878398,155.9025 8.86106154,153.998161 0.11453405,150.530867 L28.3559259,92.95 L25.7608323,0.465639019 C26.6223643,0.436954934 27.4874702,0.4225 28.3559259,0.4225 Z" id="path-1"></path>
+    </defs>
+    <g id="Welldoc-Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="New-Home-Page" transform="translate(-740.000000, -525.000000)">
+            <g id="Pie-Graphs" transform="translate(741.000000, 526.000000)">
+                <g id="Group">
+                    <g id="Group-8">
+                        <g id="hub/med_medium_filled" stroke="#468AC5" stroke-dasharray="3.600000143051147,4.800000071525574" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65">
+                            <path d="M167.748148,85.9322034 C167.748148,131.166967 130.19536,169 85.2956685,169 C37.5527882,169 0,131.166967 0,85.9322034 C0,37.8330329 37.5527882,0 85.2956685,0 C130.19536,0 167.748148,37.8330329 167.748148,85.9322034 L167.748148,85.9322034 Z" id="challenges_empty_stroke"></path>
+                        </g>
+                        <g id="Fill-13-+-Fill-15-Mask" transform="translate(55.518148, 6.337500)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#43A1FF" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="icon/bg_hub_noline" transform="translate(33.549630, 40.560000)">
+                            <g id="meds_small_rev"></g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

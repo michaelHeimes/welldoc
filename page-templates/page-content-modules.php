@@ -10,6 +10,18 @@ Template Name: Content Modules
 	<?php if ( have_rows('content_modules') ) : ?>
 	<?php while ( have_rows('content_modules') ) : ?> 
 		<?php the_row(); ?>
+		
+		<?php if ( get_row_layout() == 'hero_banner' ) : 
+		
+			get_template_part('modules/hero-banner');
+		
+		endif;?>
+
+		<?php if ( get_row_layout() == 'platform_cards' ) : 
+		
+			get_template_part('modules/platform-cards');
+		
+		endif;?>
 
 		<?php if ( get_row_layout() == 'resources' ) : ?>
 			<div class="<?php the_sub_field('custom_class');?>">

@@ -7,6 +7,7 @@ Stylesheet: Global Stylesheet
 VARIABLES
 *********************/
 $brand-blue: #1579D9;
+$gray-bg: #F1F2F6;
 
 /*********************
 PAGE TOPS
@@ -99,6 +100,26 @@ POSTS & CONTENT STYLES
 	@include button;
 }
 
+
+/*********************
+TYPOGRAPHY
+*********************/
+h2.small-heading,
+h3.small-heading {
+	font-size: rem-calc(17);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+
+h2.large-heading,
+h3.large-heading {
+	font-size: rem-calc(48);
+	letter-spacing: 0;
+	line-height: 1.166;
+	font-weight: 900;
+}
+
 /*********************
 PIPES
 *********************/
@@ -118,6 +139,52 @@ PIPES
 }
 
 /*********************
+REVEALS
+*********************/
+.reveal {
+	overflow: visible;
+	
+	button.close-button {
+		position: absolute;
+	    top: -12.5px;
+	    right: -12.5px;
+	    display: block;
+	    width: 30px;
+	    height: 30px;
+		background: transparent;
+	    border-radius: 100%;
+	    background: #016ECD url(/wp-content/themes/welldoc/assets/images/white-close.svg);
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	    transition: 0.4s ease;
+	    
+	    &:hover {
+		    transform: rotate(90deg);
+	    }
+	    
+    }
+}
+
+
+/*********************
+CIRCLES
+*********************/
+.circle {
+	position: absolute;
+	border-radius: 100%;
+	
+	&.yellow {
+		background-color: #DCCD17;
+	}
+	
+	&.red {
+		background-color: #FB551E;
+	}
+	
+}
+
+
+/*********************
 CAT TAGS
 *********************/
 .cat-wrap a {
@@ -135,7 +202,7 @@ CAT TAGS
 BUTTONS
 *********************/
 .btn {	
-	display: block;
+	display: inline-block;
 	position: relative;
     z-index: 5;
 	min-width: 238px;
@@ -148,30 +215,36 @@ BUTTONS
 	text-align: center;
 	line-height: 1.18;
     padding: 10px 30px 8px;
-
+	box-shadow: 0 3px 1px -2px rgba(11,120,227,0.20), 0 2px 2px 0 rgba(6,63,120,0.14), 0 1px 5px 0 rgba(6,63,120,0.12);
+	
+	&:hover {
+        box-shadow: 0 5px 5px -3px rgba(6,63,120,0.20), 0 8px 10px 1px rgba(6,63,120,0.14), 0 3px 14px 2px rgba(11,120,227,0.12);
+	}
+    
 	&.blue,
 	.economic-outcomes-contact .gform_button,
 	.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit] {
-		position: relative;
-	    z-index: 5;
-		min-width: 238px;
-		max-width: 100%;
-		font-weight: 900;
-		text-transform: uppercase;
-		font-size: 14px;
-		letter-spacing: .41px;
 		background: $brand-blue;
 		color: $white;
 		border: 3px solid $brand-blue;
-		box-shadow: 0 3px 1px -2px rgba(11,120,227,0.20), 0 2px 2px 0 rgba(6,63,120,0.14), 0 1px 5px 0 rgba(6,63,120,0.12);
-		
-		&:hover {
-	        box-shadow: 0 5px 5px -3px rgba(6,63,120,0.20), 0 8px 10px 1px rgba(6,63,120,0.14), 0 3px 14px 2px rgba(11,120,227,0.12);
-		}
+	}
+	
+	&.white {
+		background-color: $white;
+		color: $brand-blue;
 	}
 	
 	&.outline {
 		border: 3px solid $white;
+	}
+	
+	&.no-shadow {
+		box-shadow: 0 0 0 0;
+		
+		&:hover {
+			box-shadow: 0 0 0 0;
+		}
+		
 	}
 	
 }

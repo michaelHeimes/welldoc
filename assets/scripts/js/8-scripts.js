@@ -4,6 +4,7 @@ $(document).ready(function() {
 	controller = new ScrollMagic.Controller();
 	
 // jQuery Modal
+/*
 	if ($('.j-modal-wrap').length) {
 		
 		$('.j-modal-wrap').each(function() {
@@ -22,6 +23,92 @@ $(document).ready(function() {
 		});
 		
 	}
+*/
+	
+//	Full height heros
+	if ($(".hero-banner.height-full").length) {
+		
+		function setHeight() {
+			var $alertHeight = $("#alert").outerHeight(true);
+			var $headerHeight = $(".header").outerHeight(true);	
+			var $windowHeight = $(window).innerHeight();
+			
+			var	$heroHeight = $windowHeight - ($alertHeight + $headerHeight);
+									
+			$(".hero-banner.height-full").css("min-height", $heroHeight);
+						
+		};
+		
+		setHeight();
+		
+		$(window).resize(function() {
+			setHeight();
+		});		
+		
+	}
+
+
+//	Block Rows
+	if ($(".block-rows").length) {
+		
+		var $inner = $(".block-row .inner");
+		
+		function setBlockWidth() {
+			
+			var $blockWidth = $($inner).width();
+												
+			$($inner).css("min-height", $blockWidth);
+						
+		};
+		
+		setBlockWidth();
+		
+		$(window).resize(function() {
+			setBlockWidth();
+		});	
+		
+		$(".single-row").each(function(index, element) {
+			
+			var $row = $(this);
+			var $link = $(this).find('a');
+			var tl = new TimelineMax({
+			  paused:true
+			});
+			
+			tl.to($row, 0.5, {boxShadow:"0 5px 5px -3px rgba(0,0,0,0.20), 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12)", ease:Power3.easeOut});
+						
+			$($link).mouseenter(function(){
+				tl.play();
+
+			})
+			
+			$($link).mouseleave(function(){
+				tl.reverse();
+			})
+		
+		});
+			
+		
+	}
+
+	
+// 	Hero scroll to #next
+	if ($(".scroll-down-anchor").length) {
+		
+		$(document).on('click', 'a.scroll-down-anchor', function(ev) {
+
+		 ev.preventDefault();
+
+		  var targetSection = $('a.scroll-down-anchor').attr('href');
+
+		  var targetOffset = $(targetSection).offset().top-150;
+
+		  TweenMax.to( window, 1, { scrollTo:{ y:targetOffset }, ease:Power3.easeOut } );
+
+		});
+		
+	}
+	
 		
 // Guide Modal on Clinicians Page 
 	if ($("#clinicians-form-modal").length) {
@@ -48,7 +135,6 @@ $(document).ready(function() {
 		});	
 
 	}
-		
 		
 	
 	if($('body').hasClass('home')) {

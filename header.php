@@ -74,7 +74,7 @@
 										<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
 											<?php the_sub_field('message');?>
 											<span> <?php echo esc_html($link_title); ?></span>
-											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.svg"/>
+											<i class="fas fa-arrow-right"></i>
 										</a>
 									
 									<?php else:?>
@@ -86,7 +86,7 @@
 								</div>
 								
 								<div id="alert-close-wrap" class="alert-half cell shrink">
-									<img id="alert-close" src="<?php echo get_template_directory_uri(); ?>/assets/images/white-close.svg"/>
+									<i class="fas fa-times"></i>
 								</div>
 								
 							</div>

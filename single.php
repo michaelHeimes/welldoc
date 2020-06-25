@@ -131,13 +131,15 @@
 								$category_list[] = esc_html( $category->term_id ) ;
 							}
 						
-							$more_terms =  (implode( ', ', $category_list ));
+							$more_terms =  implode( ', ', $category_list );
+							
+							$combo = implode( ', ', array( '1st' => $post_terms, $more_terms));
 	
-
 							$args3 = array( 
 							'post_type' => 'post',
 							'order' => 'DESC',
 							'posts_per_page' => 3,
+							'post_status' => 'publish',
 							'post__not_in' => array( get_the_ID()),
 							    'tax_query' => array(
 						        array(
@@ -153,12 +155,13 @@
 							'post_type' => 'post',
 							'order' => 'DESC',
 							'posts_per_page' => 3,
+							'post_status' => 'publish',
 							'post__not_in' => array( get_the_ID()),
 							    'tax_query' => array(
 						        array(
 						            'taxonomy' => 'category',
 						            'field' => 'id',
-						            'terms' => array($post_terms, $more_terms)
+						            'terms' => array($combo)
 						        )
 						    )
 							
@@ -194,19 +197,34 @@
 						
 						<?php else:?>
 
-			
-			
-							<?php
-							
+						
+						<?php
 							//get the taxonomy terms of custom post type
 							$customTaxonomyTerms = wp_get_object_terms( $post->ID, 'type-insights', array('fields' => 'ids') );
 							
+							$categories = get_categories( array(
+							    'orderby'  => 'name',
+							    'taxonomy' => 'type-insights',
+							    'parent'   => 0
+							) );
+						
+							$category_list = array();
+							foreach ( $categories as $category ) {
+								$category_list[] = esc_html( $category->term_id ) ;
+							}
+						
+							$more_terms =  (implode( ', ', $category_list ));
+														
+							$combo = implode( ', ', array( '1st' => $customTaxonomyTerms, $more_terms));
+							
+							var_dump($combo);
+														
 							//query arguments
-							$args = array(
+							$args3 = array(
 							    'post_type' => 'insights',
 							    'post_status' => 'publish',
 							    'posts_per_page' => 3,
-							    'orderby' => 'rand',
+							    'orderby' => 'DESC',
 							    'tax_query' => array(
 							        array(
 							            'taxonomy' => 'type-insights',
@@ -217,27 +235,46 @@
 							    'post__not_in' => array ($post->ID),
 							);
 							
+							$args2 = array(
+							    'post_type' => 'insights',
+							    'post_status' => 'publish',
+							    'posts_per_page' => 3,
+							    'tax_query' => array(
+							        array(
+							            'taxonomy' => 'type-insights',
+							            'field' => 'id',
+							            'terms' => array($combo)
+							        )
+							    ),
+							    'post__not_in' => array ($post->ID),
+							);
+							
 							//the query
-							$relatedPosts = new WP_Query( $args );
+							$loop3 = new WP_Query( $args3 );
+							$loop2 = new WP_Query( $args2 );
 							
-							//loop through query
-							if($relatedPosts->have_posts()){
-							    while($relatedPosts->have_posts()){ 
-							        $relatedPosts->the_post();
-							?>
-			
-								<?php get_template_part( 'templates/loop', 'insight' ); ?>
+							$count = $loop3->found_posts;
 							
-								<?php
-								    }
-								}else{
-								    //no posts found
-								}
+							if(($count) >= 3):	
+							
+								while ( $loop3->have_posts() ) : $loop3->the_post();?>
+							
+									<?php get_template_part( 'templates/loop', 'insight' ); ?>
+									
+								<?php endwhile; wp_reset_query();?> 
 								
-								//restore original post data
-								wp_reset_postdata();
+							<?php endif;?>
+							
+							<?php
+							if(($count) <= 2):	
+							
+								while ( $loop2->have_posts() ) : $loop2->the_post();?>
+							
+									<?php get_template_part( 'templates/loop', 'insight' ); ?>
+									
+								<?php endwhile; wp_reset_query();?> 
 								
-								?>
+							<?php endif;?>
 							
 						<?php endif;?>
 				

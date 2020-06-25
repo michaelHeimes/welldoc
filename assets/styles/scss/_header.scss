@@ -35,13 +35,13 @@
 			font-weight: 900;
 			}
 			
-			img {
+			i {
 				position: relative;
 				transition: transform 0.3s ease-out;
 			}
 			
 		&:hover {
-			img {
+			i {
 		        transform: translateX(10px);
 			}			
 		}
@@ -53,12 +53,11 @@
 	#alert-close-wrap {
 		display: inline-block;
 		text-align: right;
-	
-		#alert-close {
-			min-width: 16px;
-			display: inline-block;
+			
+		i {
+			font-size: rem-calc(22);
 		}
-	
+				
 	}
 	
 }

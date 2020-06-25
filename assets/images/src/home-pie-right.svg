@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="170px" height="171px" viewBox="0 0 170 171" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group Copy</title>
+    <defs>
+        <path d="M77.5835185,0.4225 C120.198438,0.4225 154.747667,35.2276986 154.747667,78.1613015 C154.747667,121.097301 120.198438,155.9025 77.5835185,155.9025 C34.9685994,155.9025 0.419370371,121.097301 0.419370371,78.1613015 C0.419370371,55.0122038 10.4634888,34.2261879 26.4004057,19.9848669 L77.5835185,92.95 L74.9884248,0.465639019 C75.8499569,0.436954934 76.7150628,0.4225 77.5835185,0.4225 Z" id="path-1"></path>
+    </defs>
+    <g id="Welldoc-Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="New-Home-Page" transform="translate(-949.000000, -525.000000)">
+            <g id="Pie-Graphs" transform="translate(741.000000, 526.000000)">
+                <g id="Group-Copy" transform="translate(209.000000, 0.000000)">
+                    <g id="Group-8">
+                        <g id="hub/med_medium_filled" stroke="#468AC5" stroke-dasharray="3.600000143051147,4.800000071525574" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.65">
+                            <path d="M167.748148,85.9322034 C167.748148,131.166967 130.19536,169 85.2956685,169 C37.5527882,169 0,131.166967 0,85.9322034 C0,37.8330329 37.5527882,0 85.2956685,0 C130.19536,0 167.748148,37.8330329 167.748148,85.9322034 L167.748148,85.9322034 Z" id="challenges_empty_stroke"></path>
+                        </g>
+                        <g id="Fill-13-+-Fill-15-Mask" transform="translate(6.290556, 6.337500)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#43A1FF" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="icon/bg_hub_noline" transform="translate(33.549630, 40.560000)">
+                            <g id="meds_small_rev"></g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

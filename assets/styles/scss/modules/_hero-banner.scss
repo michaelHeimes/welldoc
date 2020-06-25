@@ -1,0 +1,45 @@
+.hero-banner {
+	background-color: $brand-blue;
+	color: $white;
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	
+	.grid-container,
+	.grid-x {
+		width: 100%;	
+	}
+	
+	.bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+	.cell {
+		position: relative;
+		padding-top: 4em;
+	    padding-bottom: 4em;
+	}
+	
+	h1 {
+		font-weight: 900;
+		font-size: rem-calc(88);
+		color: $white;
+		text-align: left;
+		line-height: 1.045;
+	}
+	
+	.copy-wrap {
+		font-weight: 300;
+		font-size: rem-calc(18);
+		color: $white;
+		letter-spacing: 0.56px;
+		text-align: left;
+		line-height: 1.555;
+	}
+	
+}

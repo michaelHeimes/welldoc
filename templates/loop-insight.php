@@ -1,4 +1,4 @@
-<article class="cell small-12 medium-6 xmedium-4">
+<article class="post-card cell small-12 medium-6 xmedium-4">
 	
 	<div class="top">
 		<div class="image">
