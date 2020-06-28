@@ -235,7 +235,7 @@ Template Name: Home Page
 							<?php while ( have_rows('single_card') ) : the_row();?>	
 							
 							<div class="single-card cell small-12 medium-6 xmedium-4">
-								<div class="inner">
+								<a class="inner" href="<?php the_sub_field('link'); ?>">
 									<div class="grid-x grid-padding-x align-middle">
 										
 										<div class="cell small-3">
@@ -260,7 +260,7 @@ Template Name: Home Page
 										</div>
 									
 									</div>
-								</div>
+								</a>
 							</div>
 						
 							<?php endwhile;?>
@@ -457,7 +457,7 @@ Template Name: Home Page
 							
 							<h2 class="large-heading"><?php the_sub_field('heading');?></h2>
 							
-							<p><?php the_field('copy');?></p>
+							<p><?php the_sub_field('copy');?></p>
 						
 							<?php endwhile;?>
 						<?php endif;?>
@@ -485,9 +485,9 @@ Template Name: Home Page
 							</div>
 							<?php endif;?>
 							
-							<h2 class="large-heading"><?php the_sub_field('heading');?></h2>
+							<h2 class="large-heading text-center"><?php the_sub_field('heading');?></h2>
 							
-							<p><?php the_field('copy');?></p>
+							<p><?php the_sub_field('copy');?></p>
 						
 							<?php endwhile;?>
 						<?php endif;?>
@@ -506,7 +506,7 @@ Template Name: Home Page
 								
 									<h2 class="large-heading"><?php the_sub_field('heading');?></h2>
 									
-									<p><?php the_field('copy');?></p>
+									<p><?php the_sub_field('copy');?></p>
 								
 								</div>
 							

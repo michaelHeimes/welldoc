@@ -44,11 +44,16 @@
 	
 	h1 {
 		font-weight: 900;
-		font-size: rem-calc(88);
+		font-size: rem-calc(45);
 		color: $white;
 		text-align: left;
 		line-height: 1.045;
-		font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;
+		font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;	
+			
+		@include breakpoint(xmedium) {
+			font-size: rem-calc(60);	
+		}
+			
 	}
 	
 	.copy-wrap p {

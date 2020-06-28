@@ -56,7 +56,8 @@ section.module {
 		padding-bottom: 0;
 	}
 	
-	&.background-blue {
+	&.background-blue,
+	&.background-gradient {
 		background: $brand-blue;
 		color: $white;
 		
@@ -70,6 +71,10 @@ section.module {
 			color: $brand-blue;
 		}
 		
+	}
+	
+	&.background-gradient {
+		background-image: linear-gradient(0deg, #000DC8 2%, rgba(1,53,205,0.55) 40%, rgba(0,147,255,0.00) 95%);
 	}
 	
 	&.background-gray {
