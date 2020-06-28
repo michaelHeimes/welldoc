@@ -62,147 +62,6 @@
 	
 }
 
-/*
-@media (max-width: 992px) {
-	
-	.header > .container {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
-	}
-
-	.main-menu {
-	  display: none;
-	  float: none;
-	  z-index: 99;
-	  padding-bottom: 20px;
-	  padding-top: 15px;
-	}
-
-	.main-menu .btn {
-	  margin-top: 5px;
-	}
-
-	.main-menu li {
-	  float: none;
-	  text-align: center;
-	  padding: 0;
-	}
-
-
-	.active-menu .main-menu {
-	  display: block;
-	  position: absolute;
-	  top: 0;
-	  z-index: 5;
-	  padding-top: 70px;
-	  left: 0;
-	  right: 0;
-	  background: #016ecd;
-	}
-
-	.active-menu .menu-trigger span:nth-child(2) {
-	  opacity: 0;
-	}
-
-	.active-menu .menu-trigger span:nth-child(1) {
-	  -webkit-transform: rotate(45deg);
-	  -ms-transform: rotate(45deg);
-	      transform: rotate(45deg);
-	  margin: 8px 0 -14px;
-	}
-
-	.active-menu .menu-trigger span:nth-child(3) {
-	  -webkit-transform: rotate(-45deg);
-	  -ms-transform: rotate(-45deg);
-	      transform: rotate(-45deg);
-	}
-
-	.alignright {
-	  margin-left: 15px;
-	  margin-bottom: 15px;
-	}
-	
-	.main-menu li.btn-menu{
-    	margin-top: 10px;
-    	margin-left: -12px;
-  	}
-
-}
-*/
-
-#offCanvas {
-	padding-top: 1.3em;
-	padding-bottom: 2em;
-	
-	 a {
-		font-weight: 900;
-		font-size: rem-calc(14);
-		color: $black;
-		letter-spacing: 1.25px;
-		text-align: center;
-		line-height: 1.14;
-		text-transform: uppercase;
-	
-		&.ps-link {
-			color: $brand-blue;
-		}
-		
-	}
-	
-	ul#menu-main-menu {
-		margin: 0;
-		list-style: none;
-		flex-direction: column;
-		
-		li {
-			margin: 0.8em;
-			
-		&:not(.login) {
-			a {
-				padding: 0.3em;
-			}
-			
-		}
-		
-		&.btn.blue {
-			min-width: 0;
-		  
-			a {
-				background: none;
-				color: $white;
-			}
-		  
-		}
-
-		&.login {
-			
-			a {
-				position: relative;
-				padding-left: 2em;
-				
-				&:before {
-					content: url(../images/person.svg);
-					position: absolute;
-					left: 0;
-					width: 21px;
-					height: 21px;
-				}
-				
-			}
-		}
-			
-		}
-		
-	}	
-}
-
 .header {
 	position: relative;
 	background-color: $white;
@@ -210,7 +69,8 @@
 	padding-bottom: 1.25em;
 	z-index: 999;
 	
-	a {
+	a.platform-link,
+	.main-menu a {
 		font-weight: 900;
 		font-size: rem-calc(14);
 		color: $black;
@@ -223,6 +83,11 @@
 			color: $brand-blue;
 		}	
 	
+	}
+	
+	a.platform-link {
+		color: $brand-blue;
+		margin-left: 0.5em;
 	}
 
 	&.sticky-header {
@@ -245,8 +110,7 @@
 		
 	}
 	
-	.menu-trigger,
-	.takover-trigger {
+	#takover-trigger {
 		display: block;
 		cursor: pointer;
 		width: 25px;
@@ -325,4 +189,134 @@
 		
 	}
 	
+	#takeover {
+		display: none;
+		position: fixed;
+		z-index: 9999999999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		width: 100vw;
+		height: 100%;
+		height: 100vh;
+		overflow: auto;
+		background-color: #2e3341;
+		
+		.top {
+			height: 80px;
+						
+			a {
+				margin: auto;
+				
+				@include breakpoint(mobile) {
+					margin: 0;
+				}
+			}
+			
+			button#takeover-close {
+				position: absolute;
+				right: 0;
+				
+				i {
+					color: $white;
+					font-size: rem-calc(30);
+				}
+				
+			}
+			
+		}
+		
+		.grid-container,
+		.menu-wrap {
+			position: relative;
+			height: 100%;
+		}
+		
+		nav.menu-takeover-menu-container {
+			width: 100%;
+			max-width: 930px;
+			margin: auto;
+			padding-top: 7.1em;
+			padding-bottom: 7.1em;
+			
+			> ul {
+				margin: -3em 0 0;
+				width: 100%;
+				padding: 0;
+				list-style: none;
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
+				
+				@include breakpoint(mobile) {
+					flex-direction: row;
+				}
+				
+				> li {
+					padding: 0.75em .9375rem;
+					
+					
+					@include breakpoint(large) {
+						padding: 3em;
+					}
+	
+					> a {
+						color: $white;
+						cursor: default;
+						margin-bottom: 1.6em;
+						
+						@include breakpoint(mobile) {
+							margin-bottom: 2.1em;
+						}
+					}
+				
+				}
+				
+				ul.sub-menu {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					
+					li {
+						margin: 0 0 1.1em;
+						
+						@include breakpoint(mobile) {
+							margin: 0 0 1.9em;	
+						}
+						
+						a {
+							font-weight: 300;
+							font-size: rem-calc(18);
+							color: rgba(255,255,255,0.75);
+							transition: color 0.25s ease;
+							
+						&:hover {
+							color: rgba(255,255,255,1);
+						}
+							
+						}
+						
+					@include breakpoint(large) {
+						margin: 0 0 1.9em;
+						
+							a{
+								font-size: rem-calc(24);
+							}
+						
+					}
+						
+					}
+					
+				}
+				
+			}		
+			
+		}
+		
+	}
+	
 }
+
+

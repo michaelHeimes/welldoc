@@ -1,0 +1,30 @@
+.three-col-icon-top-copy {
+			
+	h2 {
+		padding-bottom: 1.48em;
+	}
+	
+	h3 {
+		font-weight: 900;
+		font-size: rem-calc(12);
+		color: $alt-black;
+		letter-spacing: 1.29px;
+		text-align: center;
+		line-height: 1.666;
+		text-transform: uppercase;
+	}
+	
+	.single-card {
+		margin-bottom: 2em;
+	
+		.icon-wrap {
+			height: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 1.2em;
+		}
+	
+	}
+			
+}

@@ -11,15 +11,15 @@
 		.circle {
 			
 			&.yellow {
-				top: 10%;
-				right: 32%;
+				top: 7%;
+				right: 28%;
 				width: 147px;
 				height: 147px;
 			}
 
 			&.red {
-				top: 25%;
-				right: 12%;
+				top: 20%;
+				right: 8%;
 				width: 120px;
 				height: 120px;
 			}
@@ -36,26 +36,30 @@
 		}
 		
 		.pies-wrap {
-			width: 377px;
-			height: 169px;
-			display: flex;
-			justify-content: space-between;
-			position: absolute;
 			top: 58%;
 			left: 45%;
-			
 		}
 		
-		.cell {
+		.left {
 			position: relative;
 			padding-top: 4em;
-		    padding-bottom: 4em;
+		    padding-bottom: 0em;
+		}
+		
+		.right {
+			padding-top: 0;
+			padding-bottom: 4em;
 		}
 		
 		h1 {
-			font-size: rem-calc(88);
+			font-size: rem-calc(31);
 			line-height: 1.045;
 			padding-bottom: 0.28em;
+			
+			@include breakpoint(xmedium) {
+				font-size: rem-calc(88);
+			}
+			
 		}
 		
 		.copy-wrap {
@@ -63,6 +67,7 @@
 		}
 		
 		button.video-play {
+			cursor: pointer;
 			color: $white;
 			display: flex;
 			align-items: center;
@@ -81,10 +86,12 @@
 			img.conditions-panel {
 				width: 300px;
 				height: 300px;
+				margin-left: auto;
+				margin-right: auto;
 				
-				@include breakpoint(xmedium) {
-					width: 486px;
-					height: 462px;
+				@include breakpoint(medium) {
+					width: 650px;
+					height: 618px;
 				}
 				
 			}
@@ -94,17 +101,30 @@
 				#condition-fade-copy-wrap {
 					position: absolute;
 				    z-index: 2;
-				    left: -110px;
+				    left: 0;
 				    right: 0;
-				    top: 180px;
+				    top: 30px;
+				    
+				    @include breakpoint(xmedium) {
+					    left: -110px;
+					    right: 0;
+					    top: 180px;
+				    }
 				
 					.single-condition-label {
 						position: absolute;
 						top: 0;
-						left: 50px;
+						left: 50%;
 						opacity: 0;
-						transform: translateX(50px);
+						transform: translateX(-50%);
 						transition: opacity 0.4s ease 0.1s, transform 0.4s ease;
+						
+						@include breakpoint(xmedium) {
+							top: 0;
+							left: 50px;
+							opacity: 0;
+							transform: translateX(50px);			
+						}
 						
 						&.show-label {
 							opacity: 1;
@@ -121,6 +141,8 @@
 
 				#conditions-screen-wrap {
 					position: relative;
+					left: -60px;
+					top: 60px;
 					
 					img.conditions-panel {
 						opacity: 0;
@@ -146,6 +168,10 @@
 		}
 		
 		.scroll-down-anchor {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-content: center;
 			position: absolute;
 			font-family: MuseoSans-700;
 			font-size: rem-calc(16);
@@ -157,6 +183,18 @@
 			left: 50%;
 			bottom: 40px;
 			transform: translateX(-50%);	
+			
+			i {
+				margin-bottom: 0.5em;
+				transition: transform 0.4s ease;
+			}
+			
+		&:hover {
+			i {
+				transform: translateY(5px);
+			}
+		}
+			
 		}
 
 	}
@@ -169,8 +207,8 @@
 		background-image: linear-gradient(0deg, #000DC8 2%, rgba(1,53,205,0.55) 39%, rgba(0,147,255,0.00) 95%);
 		
 		h2 {
-			font-size: rem-calc(16);
-			text-transform: uppercase;
+			color: $white;
+			padding-bottom: 0.5em;
 		}
 		
 		.single-card {
@@ -216,12 +254,15 @@
 							padding-bottom: 0.55em;
 							
 							&:before {
-								content: url(/wp-content/themes/welldoc/assets/images/bluecheck.svg);
+								content: "";
 								position: absolute;
-								width: 16px;
-								height: 16px;
-								top: 3px;
+								font-size: 1.1em;
+								top: 0;
 								left: 10px;
+								font-family: "Font Awesome 5 Pro";
+								font-weight: 700;
+								content: "\f058";
+								color: $brand-blue;
 							}
 							
 						}
@@ -241,6 +282,10 @@
 		
 		.top {
 			
+			h2 {
+				color: $alt-black;
+			}
+			
 			h3 {
 				padding-bottom: 0.125em;	
 			}
@@ -248,7 +293,7 @@
 			p {
 				font-weight: 300;
 				font-size: rem-calc(18);
-				color: #3D4456;
+				color: $alt-black;
 				letter-spacing: 0.56px;
 				text-align: center;
 				line-height: 1.555;
@@ -320,28 +365,13 @@
 					p {
 						font-weight: 300;
 						font-size: rem-calc(18);
-						color: #3D4456;
+						color: $alt-black;
 						letter-spacing: 0.56px;
 						line-height: 1.55;
 					}
 					
 					a {
-						font-size: rem-calc(17);
-					    font-weight: 900;
-					    text-transform: uppercase;
 					    color: $brand-blue;
-					    
-					    i {
-						    margin-left: 4px;
-						    transition: transform 0.5s ease;
-					    }
-					    
-					&:hover {
-						i {
-							transform: translateX(10px);
-						}
-					}
-					    
 					}
 					
 				}
@@ -403,7 +433,7 @@
 			padding-top: 0.9em;
 			padding-bottom: 4em;
 			
-			img {
+			img.globe {
 				position: absolute;
 				top: 35%;
 				left: 0%;
@@ -423,12 +453,15 @@
 					    padding-bottom: 0.55em;
 					    
 					    &:before {
-							content: url(/wp-content/themes/welldoc/assets/images/bluecheck.svg);
-						    position: absolute;
-						    width: 16px;
-						    height: 16px;
-						    top: 3px;
-						    left: 10px;
+							content: "";
+							position: absolute;
+							font-size: 1.1em;
+							top: 0;
+							left: 10px;
+							font-family: "Font Awesome 5 Pro";
+							font-weight: 700;
+							content: "\f058";
+							color: $brand-blue;
 					    }
 					    
 					}
@@ -463,17 +496,19 @@
 	}
 	
 	.blue-squares {
+		padding-top: 6em;
 		
 		.square {
 			margin-bottom: 1.875rem;
 			.inner {
+				background: $brand-blue;
 				padding: 3.8em;
-				background-color: $brand-blue;
 				color: $white;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				justify-content: center;
+				border-radius: 4px;
 				
 				.logos {
 					padding-bottom: 6.8em;
@@ -520,7 +555,6 @@
 			
 		&.bottom-left {
 			.inner {
-				
 				align-items: flex-start;
 				position: relative;
 				overflow: hidden;
@@ -558,6 +592,217 @@
 		}
 		
 	}
+	
+	
+	.text-image-set {
+		padding-top: 2em;
+		padding-bottom: 1.2em;
+	}
+	
+	
+	.quote-cards {
+		padding-bottom: 5.55em;
+		
+		h2 {
+			padding-bottom: 1.5em;
+		}
+		
+		.single-quote {
+			margin-bottom: 2em;
+			
+			.right {
+				.inner {
+					max-width: 460px;
+			
+					.btn-wrap {
+						padding-top: 0.7em;
+						padding-bottom: 0.8em;
+				
+						.video-play.btn {
+							padding-left: 0;
+							color: $brand-blue;
+							
+							i {
+								font-size: rem-calc(24);
+								margin-right: 7px;
+							}
+							
+						}
+					
+					}
+					
+					.bottom {
+							font-size: rem-calc(12);
+							color: $alt-black;
+							line-height: 1.333;
+										
+						.name {
+							font-weight: 900;
+							letter-spacing: 1.8px;
+							text-transform: uppercase;
+			
+						}
+					
+						.img-wrap {
+							img {
+								max-width: 81px;
+								border-radius: 100%;
+							}	
+						}
+						
+						.text-wrap {
+							div {
+								padding-bottom: 0.2em;
+							}	
+						}
+					
+					}
+					
+				}
+			
+			}
+			
+		}
+		
+	}
+	
+	
+	.media-section {
+	
+		h2 {
+			padding-bottom: 0.35em;
+		}
+	
+		.media-section-wrap {
+			padding-bottom: 5em;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+		    align-items: center;
+		    
+			@include breakpoint(mobile){
+			    flex-direction: row;
+			    align-items: stretch;
+			}
+	
+			.single-media-link {
+				margin-bottom: 1.875rem;
+				min-width: 100%;
+				max-width: 320px;
+				min-height: 272px;
+				max-height: 320px;
+				
+				@include breakpoint(mobile){
+					min-height: 0;
+				
+				&:nth-child(4n+1),
+				&:nth-child(4n+4) {
+					min-width: 60%;
+					max-width: 60%;
+					
+					.text-wrap {
+						padding: 46px 78px 46px 32px;					
+					}
+					
+				}
+				
+				&:nth-child(4n+2),
+				&:nth-child(4n+3) {
+					min-width: 40%;
+					max-width: 40%;
+					
+					.text-wrap {
+					    padding: 37px 45px 37px 13px;
+					}
+					
+				}
+		
+				}
+	
+				.inner {
+					position: relative;
+					min-height: 100%;
+					max-height: 272px;
+					overflow: hidden;
+					border-radius: 8px;
+					
+					> img {
+						transition: all 0.3s ease;
+						
+						@include breakpoint(mobile){
+							max-width: 100%;
+						}
+						
+					}
+	
+				&.hovered > img {
+					max-width: 110%;
+					transform: translateX(-5%) translateY(-5%);
+				}
+	
+					.text-wrap,
+					.mask {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						border-radius: 8px;
+						overflow: hidden;
+					}
+		
+					.text-wrap {
+						color: #fff;
+						border: 1px solid #979797;
+						display: flex;
+					    flex-direction: column;
+					    justify-content: flex-end;
+					    padding: 46px 32px 46px 32px;
+					    
+					    @include breakpoint(mobile){
+						    
+							h3 {
+								font-weight: 700;
+								font-size: 16px;
+								line-height: 19px;
+								color: #FFFFFF;
+								letter-spacing: 0.67px;
+							}
+						    
+						    p {
+							    font-weight: 700;
+								text-transform: uppercase;
+								font-size: 14px;
+								line-height: 17px;
+								color: #92E0FA;
+								letter-spacing: 2.92px;
+								padding-bottom: 4px;					    
+						    }
+					    }
+					    
+						.read-now-wrap {
+							padding-top: 4px;
+							text-align: right;
+							
+							a {
+								text-decoration: underline;
+							}
+						}
+					    
+					}
+		
+					.mask {
+						background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.00)), color-stop(0%, rgba(0,0,0,0.28)), to(#000000));
+					}
+					
+				}
+				
+			}
+				
+		}
+	
+	}	
+	
 	
 
 }

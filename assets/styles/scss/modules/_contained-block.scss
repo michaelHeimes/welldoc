@@ -1,0 +1,46 @@
+section.module.contained-block {
+	padding-top: 0;
+	
+	.inner {
+		width: 100%;
+		padding-top: 7em;
+	    padding-bottom: 7em;
+	    min-height: 480px;
+	    display: flex;
+	    width: 100%;
+	    align-items: center;
+	    justify-content: center;
+		border-radius: 4px;
+
+	&.background-blue {
+		background: $brand-blue;
+		color: $white;
+		
+		h2,
+		p,
+		a {
+			color: $white;	
+		}
+		
+		.btn {
+			background-color: $white;
+			color: $brand-blue;
+		}
+		
+	}
+	
+	&.background-gray {
+		background-color: $gray-bg;
+	}
+	
+	&.background-white {
+		background-color: $white;
+	}
+	
+		h2 {
+			padding-bottom: 0.4em;
+		}
+		
+	}
+	
+}

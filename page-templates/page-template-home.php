@@ -23,7 +23,7 @@ Template Name: Home Page
 				
 				<div class="grid-x grid-padding-x align-middle">
 				
-					<div class="left cell small-12 medium-12 xmedium-7">
+					<div class="left half cell small-12 medium-12 xmedium-7 large-7">
 						
 						<h1><?php the_field('hero_heading');?></h1>
 						
@@ -63,13 +63,13 @@ Template Name: Home Page
 								<?php if(get_sub_field('type') == 'video'):?>
 								
 									<div class="btn-wrap cell shrink">					
-										<button class="btn no-shadow video-play" data-open="modal-<?php echo $num;?>">
+										<button class="btn no-shadow video-play" data-open="hero-modal-<?php echo $num;?>">
 											<i class="far fa-play-circle"></i>
 											<span>Watch Video</span>
 										</button>
 									</div>
 								
-									<div class="reveal large" id="modal-<?php echo $num;?>" data-animation-in="fade-in slow" data-animation-out="fade-out fast" data-reset-on-close="true" data-reveal>
+									<div class="reveal large" id="hero-modal-<?php echo $num;?>" data-animation-in="fade-in slow" data-animation-out="fade-out fast" data-reset-on-close="true" data-reveal>
 										
 										<?php
 										$iframe = get_sub_field('video_url');
@@ -110,7 +110,7 @@ Template Name: Home Page
 						
 					</div>
 			
-					<div class="right cell small-12 medium-12 xmedium-5">
+					<div class="right half cell small-12 medium-12 xmedium-5 large-5">
 					<?php if( have_rows('hero_multiple_conditions') ):?>
 						<?php while ( have_rows('hero_multiple_conditions') ) : the_row();?>	
 						
@@ -212,7 +212,10 @@ Template Name: Home Page
 			
 			</div>
 			
-			<a class="scroll-down-anchor" href="#next">Scroll</a>
+			<a class="scroll-down-anchor" href="#next">
+				<i class="fas fa-long-arrow-down"></i>
+				<span>Scroll</span>
+			</a>
 			
 		</div><!-- hero-banner -->
 		
@@ -220,7 +223,7 @@ Template Name: Home Page
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 				
-					<h2 class="small-heading w-icon cell small-12"><?php the_field('pc_heading')?></h2>
+					<h2 class="small-heading w-icon cell small-12"><?php the_field('pc_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-white.svg"/></h2>
 					
 				</div>
 					
@@ -233,7 +236,7 @@ Template Name: Home Page
 							
 							<div class="single-card cell small-12 medium-6 xmedium-4">
 								<div class="inner">
-									<div class="grid-x grid-padding-x">
+									<div class="grid-x grid-padding-x align-middle">
 										
 										<div class="cell small-3">
 											
@@ -278,7 +281,7 @@ Template Name: Home Page
 				
 					<div class="top cell small-12 text-center">
 				
-						<h2 class="small-heading w-icon"><?php the_field('ps_small_heading')?></h2>
+						<h2 class="small-heading w-icon align-center"><?php the_field('ps_small_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-dark.svg"/></h2>
 						
 						<h3 class="large-heading"><?php the_field('ps_heading');?></h3>
 						
@@ -326,7 +329,7 @@ Template Name: Home Page
 											    $link_title = $link['title'];
 											    $link_target = $link['target'] ? $link['target'] : '_self';
 											    ?>
-											    <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html( $link_title ); ?></span><i class="fas fa-arrow-right"></i></a>
+											    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html( $link_title ); ?></span><i class="fas fa-arrow-right"></i></a>
 											<?php endif; ?>		
 											
 										</div>								
@@ -356,7 +359,7 @@ Template Name: Home Page
 					
 					<div class="top cell small-12 text-center">
 						
-						<h2 class="small-heading w-icon"><?php the_field('ben_small_heading')?></h2>
+						<h2 class="small-heading w-icon align-center"><?php the_field('ben_small_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-white.svg"/></h2>
 						
 						<h3 class="large-heading"><?php the_field('ben_heading');?></h3>
 						
@@ -397,9 +400,9 @@ Template Name: Home Page
 					
 					<div class="left cell small-12 medium-12 xmedium-6">
 						
-						<img class="pir-r" src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/approach-globe.svg"/>
+						<img class="globe" src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/approach-globe.svg"/>
 						
-						<h2 class="small-heading w-icon"><?php the_field('ap_small_heading')?></h2>
+						<h2 class="small-heading w-icon"><?php the_field('ap_small_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-dark.svg"/></h2>
 						
 						<h3 class="large-heading text-left"><?php the_field('ap_heading');?></h3>	
 						
@@ -543,6 +546,280 @@ Template Name: Home Page
 			</div>
 		</section>
 		
+		
+		<section class="text-image-set image-right">
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x align-middle">			
+			
+				<div class="img-wrap half cell small-12 mobile-6">
+					
+				<?php 
+				$image = get_field('it_image');
+				if( !empty( $image ) ): ?>
+				    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+				<?php endif; ?>					
+					
+				</div>
+				
+				<div class="text-wrap half cell small-12 mobile-6">
+					
+					<h3 class="large-heading"><?php the_field('it_heading');?></h3>
+					
+					<div class="copy-wrap">
+						<?php the_field('it_copy');?>
+					</div>
+					
+					<?php if( have_rows('it_buttons') ):?>
+					<div class="buttons-wrap grid-x grid-padding-x align-middle">
+						<?php while ( have_rows('it_buttons') ) : the_row();?>	
+						
+						<?php $num = get_row_index();?>
+						
+						<?php if( have_rows('single_button') ):?>
+							<?php while ( have_rows('single_button') ) : the_row();?>	
+							
+							<?php if(get_sub_field('type') == 'link'):?>
+							
+								<?php 
+								$link = get_sub_field('link');
+								if( $link ): 
+								    $link_url = $link['url'];
+								    $link_title = $link['title'];
+								    $link_target = $link['target'] ? $link['target'] : '_self';
+								    ?>
+								<div class="btn-wrap cell shrink">
+									<a class="btn blue link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+								</div>
+								<?php endif; ?>
+							
+							<?php endif;?>
+		
+							<?php if(get_sub_field('type') == 'video'):?>
+							
+								<div class="btn-wrap cell shrink">					
+									<button class="btn no-shadow video-play" data-open="modal-<?php echo $num;?>">
+										<i class="far fa-play-circle"></i>
+										<span>Watch Video</span>
+									</button>
+								</div>
+							
+								<div class="reveal large" id="modal-<?php echo $num;?>" data-animation-in="fade-in slow" data-animation-out="fade-out fast" data-reset-on-close="true" data-reveal>
+									
+									<?php
+									$iframe = get_sub_field('video_url');
+									
+									preg_match('/src="(.+?)"/', $iframe, $matches);
+									$src = $matches[1];
+									
+									$params = array(
+									    'controls'  => 1,
+									    'hd'        => 1,
+									    'autohide'  => 1,
+										'autohide'    => 1,
+									    'modestbranding' => 1,
+									    'rel' => 0
+									);
+									$new_src = add_query_arg($params, $src);
+									$iframe = str_replace($src, $new_src, $iframe);
+									
+									$attributes = 'frameborder="0"';
+									$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+									
+									echo $iframe;
+									?>
+									
+								  <button class="close-button" data-close aria-label="Close modal" type="button"></button>
+								  
+								</div>
+							
+							<?php endif;?>
+								
+						
+							<?php endwhile;?>
+						<?php endif;?>
+					
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>
+		
+			
+				</div>
+			</div>
+		</section>
+		
+		<section class="quote-cards">
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x">
+					
+					<h2 class="large-heading cell small-12 text-center"><?php the_field('quotes_heading');?></h2>
+					
+				<?php if( have_rows('quote_cards') ):?>
+					<?php while ( have_rows('quote_cards') ) : the_row();?>	
+					
+					<?php if( have_rows('single_card') ):?>
+						<?php while ( have_rows('single_card') ) : the_row();?>	
+					
+						<div class="single-quote cell small-12 medium-6">
+							<div class="grid-x grid-padding-x">
+								
+								<div class="left cell shrink">
+									<img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/quote-mark.svg"/>
+								</div>
+								
+								<div class="right cell auto">
+									<div class="inner">
+										<?php the_sub_field('text');?>
+										
+										<?php if( $iframe = get_sub_field('video_url') ):?>
+												
+											<div class="btn-wrap cell shrink">					
+												<button class="btn no-shadow video-play" data-open="quote-modal-<?php echo $num;?>">
+													<i class="far fa-play-circle"></i>
+													<span>Watch Video</span>
+												</button>
+											</div>
+										
+											<div class="reveal large" id="quote-modal-<?php echo $num;?>" data-animation-in="fade-in slow" data-animation-out="fade-out fast" data-reset-on-close="true" data-reveal>
+												
+												<?php
+												preg_match('/src="(.+?)"/', $iframe, $matches);
+												$src = $matches[1];
+												
+												$params = array(
+												    'controls'  => 1,
+												    'hd'        => 1,
+												    'autohide'  => 1,
+													'autohide'    => 1,
+												    'modestbranding' => 1,
+												    'rel' => 0
+												);
+												$new_src = add_query_arg($params, $src);
+												$iframe = str_replace($src, $new_src, $iframe);
+												
+												$attributes = 'frameborder="0"';
+												$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+												
+												echo $iframe;
+												?>
+												
+											  <button class="close-button" data-close aria-label="Close modal" type="button"></button>
+											  
+											</div>
+
+										
+										<?php endif;?>
+										
+										<div class="bottom grid-x grid-padding-x align-middle">
+											
+											<div class="img-wrap cell shrink">
+												
+												<?php 
+												$image = get_sub_field('author_image');
+												if( !empty( $image ) ): ?>
+												    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+												<?php endif; ?>
+												
+											</div>
+											
+											<div class="text-wrap cell shrink">
+												<div class="name"><?php the_sub_field('author_name');?></div>
+												<div><?php the_sub_field('author_title');?></div>
+												<div><?php the_sub_field('author_company');?></div>
+											</div>
+										
+										</div>
+										
+									</div>
+								</div>
+									
+							</div>
+						</div>
+					
+						<?php endwhile;?>
+					<?php endif;?>
+				
+					<?php endwhile;?>
+				<?php endif;?>
+					
+				</div>
+			</div>
+		</section>
+		
+		
+		<div class="media-section">
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x">
+					
+					<h2 class="large-heading cell small-12"><?php the_field('media_heading');?></h2>
+					
+					<div class="media-section-wrap cell small-12">
+						
+						<div class="grid-x grid-padding-x">
+						
+					<?php
+					$featured_posts = get_field('media_links');
+					if( $featured_posts ): 
+					foreach( $featured_posts as $post ):
+					setup_postdata($post);?>
+				
+				
+							<div class="single-media-link cell shrink">
+								
+								<div class="inner">
+								
+									<?php 
+									$image = get_field('background_image');
+									$size = 'full'; // (thumbnail, medium, large, full or custom size)
+									if( $image ) {
+										echo wp_get_attachment_image( $image, $size );
+									}
+									?>		
+																
+									<div class="mask"></div>
+									
+									<div class="text-wrap">
+									
+										<p><?php 
+											if ( 'news' == get_post_type() ){
+												$terms = get_the_terms( $post->ID , 'type-news' ); foreach ( $terms as $term ) { 
+													if ($term->slug == 'press-release') {
+														echo $term->name;
+													}
+												}	
+												$terms = get_the_terms( $post->ID , 'type-news' ); foreach ( $terms as $term ) { 
+													if ($term->slug == 'media-coverage') {
+														echo 'Press';
+													}
+												}
+											}
+											
+											
+											if ( 'events' == get_post_type() ){ echo 'Events';}
+										?></p>
+										
+										<h3><?php the_title(); ?></h3>
+										
+										<div class="read-now-wrap">
+											<a href="<?php the_permalink(); ?>">Read Now <i class="fas fa-arrow-right"></i></a>
+										</div>
+										
+									</div>
+									
+								</div>
+	
+							</div>
+							
+							
+						<?php endforeach; wp_reset_postdata();?>
+					<?php endif; ?>
+					
+						</div>
+						
+					</div>
+				
+				</div>
+			</div>
+		</div>		
 		
 	</div><!-- body -->
 

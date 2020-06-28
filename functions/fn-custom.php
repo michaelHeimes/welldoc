@@ -81,7 +81,7 @@ add_image_size( 'video_card_2x', 752, 808, true);
 add_image_size( 'blog_thumb', 304, 216, true);
 add_image_size( 'blog_thumb_2x', 608, 432, true);
 
-add_image_size( 'resource_card',360, 536, true);
+add_image_size( 'resource_card',646, 462, true);
 
 add_image_size( 'three_col_polaroids_card',400, 298, true);
 

@@ -49,6 +49,7 @@ add_action( 'after_setup_theme', 'register_custom_nav_menus' );
 function register_custom_nav_menus() {
 register_nav_menus( array(
 	'mainmenu' => __( 'Main Navigation', 'am' ),
+	'takeovermenu' => __( 'Takeover Navigation', 'am' ),
 	'footermenuleft' => __( 'Footer Left', 'am' ),
 	'footermenucenter' => __( 'Footer Center', 'am' ),
 	'footermenuright' => __( 'Footer Right', 'am' ),

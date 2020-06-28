@@ -24,6 +24,27 @@ $(document).ready(function() {
 		
 	}
 */
+
+//  Header
+	$(document).on('click', '#takover-trigger', function(){
+		$('#takeover').fadeIn(400);
+		$('body').css('overflow', 'hidden');
+	});
+	
+	$(document).on('click', '#takeover-close', function(){
+		$('#takeover').fadeOut(400);
+		$('body').css('overflow', 'visible');
+	});
+
+	var scene = new ScrollMagic.Scene({
+		triggerElement: "header.header.static-header",
+		triggerHook: "onLeave",
+		offset: 0,
+	})
+		.setPin("header.header.static-header")
+		.addTo(controller);
+
+
 	
 //	Full height heros
 	if ($(".hero-banner.height-full").length) {
@@ -101,7 +122,7 @@ $(document).ready(function() {
 
 		  var targetSection = $('a.scroll-down-anchor').attr('href');
 
-		  var targetOffset = $(targetSection).offset().top-150;
+		  var targetOffset = $(targetSection).offset().top-20;
 
 		  TweenMax.to( window, 1, { scrollTo:{ y:targetOffset }, ease:Power3.easeOut } );
 

@@ -121,7 +121,7 @@ gulp.task('styles', function() {
 		.pipe(plugin.sass())
 		.pipe(plugin.autoprefixer({
 		    browsers: [
-		    	'last 3 versions',
+		    	'last 4 versions',
 		    	'ie >= 9',
 				'ios >= 7'
 		    ],

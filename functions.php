@@ -57,7 +57,8 @@ require_once(get_template_directory().'/functions/page-navi.php');
 // Adds support for multiple languages
 require_once(get_template_directory().'/functions/translation/translation.php'); 
 
-
+// Add Text Editor Formats
+require_once(get_template_directory().'/functions/formats.php'); 
 
 
 
@@ -77,6 +78,4 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // require_once(get_template_directory().'/functions/login.php'); 
 
 // Customize the WordPress admin
-// require_once(get_template_directory().'/functions/admin.php'); 
-
-
+// require_once(get_template_directory().'/functions/admin.php');

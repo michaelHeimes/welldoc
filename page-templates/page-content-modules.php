@@ -23,6 +23,50 @@ Template Name: Content Modules
 		
 		endif;?>
 
+		<?php if ( get_row_layout() == 'two_columns_icons_left_and_copy' ) : 
+		
+			get_template_part('modules/two-cols-icon-left-copy');
+		
+		endif;?>		
+
+		<?php if ( get_row_layout() == 'three_columns_icons_top_and_copy' ) : 
+		
+			get_template_part('modules/three-cols-icon-top-copy');
+		
+		endif;?>	
+
+		<?php if ( get_row_layout() == 'four_columns_icons_top_and_copy' ) : 
+		
+			get_template_part('modules/four-cols-icon-top-copy');
+		
+		endif;?>	
+		
+		<?php if ( get_row_layout() == 'image_text_set' ) : 
+		
+			get_template_part('modules/image-text-set');
+		
+		endif;?>		
+		
+
+		<?php if ( get_row_layout() == 'centered_contained_block' ) : 
+		
+			get_template_part('modules/centered-contained-block');
+		
+		endif;?>		
+
+		<?php if ( get_row_layout() == 'full_width_image' ) : 
+		
+			get_template_part('modules/full-width-img');
+		
+		endif;?>	
+
+		<?php if ( get_row_layout() == 'employer_resources' ) : 
+		
+			get_template_part('modules/employer-resources');
+		
+		endif;?>		
+		
+
 		<?php if ( get_row_layout() == 'resources' ) : ?>
 			<div class="<?php the_sub_field('custom_class');?>">
 				<div class="accordion container">

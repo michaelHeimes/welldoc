@@ -11,6 +11,11 @@
 		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta class="foundation-mq">	
+		<link rel='dns-prefetch' href='//pro.fontawesome.com' />
+		
+<!-- 		<script src="https://kit.fontawesome.com/a86dc06817.js" crossorigin="anonymous"></script> -->
+
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-B9BoFFAuBaCfqw6lxWBZrhg/z4NkwqdBci+E+Sc2XlK/Rz25RYn8Fetb+Aw5irxa" crossorigin="anonymous">
 		
 		<!-- If Site Icon isn't set in customizer -->
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
@@ -60,7 +65,7 @@
 						<div class="grid-container">
 							<div class="grid-x grid-padding-x align-justify">
 								
-								<div id="alert-message" class="alert-half cell shrink">
+								<div id="alert-message" class="alert-half cell auto">
 									
 									<?php 
 									$link = get_sub_field('link');
@@ -150,7 +155,7 @@
 							<div class="grid-x grid-padding-x align-middle">
 						
 								<div class="cell shrink">
-									<button class="takover-trigger"><span></span><span></span><span></span></button>
+									<button id="takover-trigger"><span></span><span></span><span></span></button>
 								</div>
 							
 								<a href="<?php echo home_url() ?>" class="logo cell shrink">
@@ -164,7 +169,7 @@
 									$link_target = $link['target'] ? $link['target'] : '_self';
 								if( $link ):?> 	
 								
-									<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="ps-link cell shrink">
+									<a class="platform-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="ps-link cell shrink">
 										<?php echo esc_html($link_title); ?>
 									</a>
 									
@@ -176,16 +181,40 @@
 						
 						<div class="right cell shrink">
 							
-							<div class="show-for-xmedium top-bar">
+							<div class="show-for-large top-bar">
 								<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'main-menu', 'menu_id' => '', 'container' => 'nav', 'depth' => 0 ) ); ?>
 							</div>
-							
-							<button class="menu-trigger hide-for-xmedium" data-toggle="offCanvas"><span></span><span></span><span></span></button>
-							
+														
 						</div>
 						
 					</div>
 				</div>
+				
+
+				<div id="takeover">
+					<div class="grid-container">
+						
+						<div class="grid-x top grid-padding-x align-justify align-middle">
+							
+								<a href="<?php echo home_url() ?>" class="logo cell shrink">
+									<img class="white-logo" src="<?php echo get_template_directory_uri() ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>" />
+								</a>
+								
+								<button id="takeover-close" class="cell shrink">
+									<i class="fas fa-times"></i>
+								</button>
+						
+						</div>
+						
+						<div class="menu-wrap grid-x grid-padding-x align-center align-middle">
+							
+							<?php wp_nav_menu( array( 'theme_location' => 'takeovermenu', 'menu_class' => 'takeover-menu', 'menu_id' => '', 'container' => 'nav', 'depth' => 0 ) ); ?>
+							
+						</div>
+					</div>
+				</div>
+				
+				
 			</header>
 		
 			<div class="show-sticky-header-trigger"></div>

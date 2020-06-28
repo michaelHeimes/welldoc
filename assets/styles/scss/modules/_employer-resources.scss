@@ -1,0 +1,36 @@
+.employer-resources {
+			
+	h2 {
+		padding-bottom: 0.95em;
+	}
+	
+	.single-card {
+		margin-bottom: 2em;
+		@include breakpoint(medium) {
+			margin-bottom: 2em;
+		}
+	
+		.thumb-wrap {
+			border-radius: 4px;
+			overflow: hidden;
+			margin-bottom: 1.1em;
+		}
+		
+		h3 {
+			font-weight: 300;
+			font-size: rem-calc(18);
+			color: $alt-black;
+			letter-spacing: 0.17px;
+			text-align: left;
+			line-height: 1.555;
+		}
+		
+		.read-time {
+			font-weight: 300;
+			font-size: rem-calc(11);
+			letter-spacing: 0;
+		}
+	
+	}
+			
+}
