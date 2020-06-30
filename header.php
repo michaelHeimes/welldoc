@@ -104,6 +104,7 @@
 			<?php endif; ?>
 			
 			
+<!--
 			<?php if (is_page(3663)):?>
 	 
 				<div id="clinicans-top-bar">
@@ -115,6 +116,7 @@
 				</div>
 	
 			<?php endif;?>
+-->
 				
 	<!--
 			<header class="header sticky-header">
@@ -220,4 +222,274 @@
 			<div class="show-sticky-header-trigger"></div>
 		
 		<?php endif;?>
+		
+		
+		<?php if (is_page('Platform Solutions')):?>
+		
+			<div class="product-panels-wrap">
+				
+				<div class="left-wrap">
+					
+					<?php if( have_rows('panel_1') ):?>
+					<div class="label-wrap p-1">				
+						<?php while ( have_rows('panel_1') ) : the_row();?>	
+						
+							<div class="label-heading">
+								<?php the_sub_field('heading');?>
+							</div>
+					
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>
+
+					<?php if( have_rows('panel_2') ):?>
+					<div class="label-wrap p-2">				
+						<?php while ( have_rows('panel_2') ) : the_row();?>	
+						
+							<div class="label-heading">
+								<?php the_sub_field('heading');?>
+							</div>
+					
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>
+					
+					<?php if( have_rows('panel_3') ):?>
+					<div class="label-wrap p-3">				
+						<?php while ( have_rows('panel_3') ) : the_row();?>	
+						
+							<div class="label-heading">
+								<?php the_sub_field('heading');?>
+							</div>
+					
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>
+					
+					<?php if( have_rows('panel_4') ):?>
+					<div class="label-wrap p-4">				
+						<?php while ( have_rows('panel_4') ) : the_row();?>	
+						
+							<div class="label-heading">
+								<?php the_sub_field('heading');?>
+							</div>
+					
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>
+					
+					<?php if( have_rows('panel_5') ):?>
+					<div class="label-wrap p-5">				
+						<?php while ( have_rows('panel_5') ) : the_row();?>	
+						
+							<div class="label-heading">
+								<?php the_sub_field('heading');?>
+							</div>
+					
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>		
+					
+				</div>		
+
+				
+				<div class="grid-container">
+					<div class="panels-wrap grid-x grid-padding-x">
+						
+						<div class="panel opening cell small-12 text-center">
+						
+							<h1><?php the_field('plat-op_headline');?></h1>
+							
+							<p><?php the_field('plat-op_copy');?></p>
+						
+						</div>
+
+						<?php if( have_rows('panel_1') ):?>
+						<?php while ( have_rows('panel_1') ) : the_row();?>
+						<div class="panel p-1 cell small-12">
+							
+							<div class="grid-x grid-padding-x align-center align-middle">
+								
+								<div class="cell small-5">
+						
+									<h1><?php the_sub_field('heading');?></h1>
+									
+									<p><?php the_sub_field('copy');?></p>
+								
+								</div>
+								
+								<div class="img-wrap cell small-5">
+									
+									<?php 
+									$image = get_sub_field('image');
+									if( !empty( $image ) ): ?>
+									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+									<?php endif; ?>									
+									
+								</div>
+							
+							</div>
+						
+						</div>
+						<?php endwhile;?>
+						<?php endif;?>
+
+						<?php if( have_rows('panel_2') ):?>
+						<?php while ( have_rows('panel_2') ) : the_row();?>
+						<div class="panel p-2 cell small-12">
+							
+							<div class="grid-x grid-padding-x align-center align-middle">
+								
+								<div class="cell small-5">
+						
+									<h1><?php the_sub_field('heading');?></h1>
+									
+									<p><?php the_sub_field('copy');?></p>
+								
+								</div>
+								
+								<div class="img-wrap cell small-5">
+									
+									<?php 
+									$image = get_sub_field('image');
+									if( !empty( $image ) ): ?>
+									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+									<?php endif; ?>									
+									
+								</div>
+							
+							</div>
+						
+						</div>
+						<?php endwhile;?>
+						<?php endif;?>
+						
+						<?php if( have_rows('panel_3') ):?>
+						<?php while ( have_rows('panel_3') ) : the_row();?>
+						<div class="panel p-3 cell small-12">
+							
+							<div class="grid-x grid-padding-x align-center align-middle">
+								
+								<div class="cell small-5">
+						
+									<h1><?php the_sub_field('heading');?></h1>
+									
+									<p><?php the_sub_field('copy');?></p>
+								
+								</div>
+								
+								<div class="img-wrap cell small-5">
+									
+									<?php 
+									$image = get_sub_field('image');
+									if( !empty( $image ) ): ?>
+									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+									<?php endif; ?>									
+									
+								</div>
+							
+							</div>
+						
+						</div>
+						<?php endwhile;?>
+						<?php endif;?>
+						
+						<?php if( have_rows('panel_4') ):?>
+						<?php while ( have_rows('panel_4') ) : the_row();?>
+						<div class="panel p-4 cell small-12">
+							
+							<div class="grid-x grid-padding-x align-center align-middle">
+								
+								<div class="cell small-5">
+						
+									<h1><?php the_sub_field('heading');?></h1>
+									
+									<p><?php the_sub_field('copy');?></p>
+								
+								</div>
+								
+								<div class="img-wrap cell small-5">
+									
+									<?php 
+									$image = get_sub_field('image');
+									if( !empty( $image ) ): ?>
+									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+									<?php endif; ?>									
+									
+								</div>
+							
+							</div>
+						
+						</div>
+						<?php endwhile;?>
+						<?php endif;?>
+						
+						<?php if( have_rows('panel_5') ):?>
+						<?php while ( have_rows('panel_5') ) : the_row();?>
+						<div class="panel p-5 cell small-12">
+							
+							<div class="grid-x grid-padding-x align-center align-middle">
+								
+								<div class="cell small-5">
+						
+									<h1><?php the_sub_field('heading');?></h1>
+									
+									<p><?php the_sub_field('copy');?></p>
+								
+								</div>
+								
+								<div class="img-wrap cell small-5">
+									
+									<?php 
+									$image = get_sub_field('image');
+									if( !empty( $image ) ): ?>
+									    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+									<?php endif; ?>									
+									
+								</div>
+							
+							</div>
+						
+						</div>
+						<?php endwhile;?>
+						<?php endif;?>
+						
+								
+	
+					
+					</div>
+				</div>
+				
+			</div>
+		
+		<?php endif;?>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		

@@ -290,8 +290,8 @@ Template Name: Home Page
 					</div>
 					
 					<?php if( have_rows('ps_image_and_copy_rows') ):?>
-					<div class="block-rows-wrap small-12">
-						<div class="block-rows grid-x grid-padding-x">
+					<div class="cube-rows-wrap small-12">
+						<div class="cube-rows grid-x grid-padding-x">
 						<?php while ( have_rows('ps_image_and_copy_rows') ) : the_row();?>
 						
 						<?php if( have_rows('single_row') ):?>
@@ -299,7 +299,7 @@ Template Name: Home Page
 						
 							<div class="single-row cell small-12">
 								
-								<div class="block-row grid-x grid-padding-x">
+								<div class="cube-row grid-x grid-padding-x">
 									
 									<?php
 										$imgID = get_sub_field('image');
@@ -309,8 +309,8 @@ Template Name: Home Page
 									?>
 									
 									
-									<div class="img-wrap cell small-12 medium-6">
-										<div class="inner" style="background-image: url(<?php echo $imgArr[0]; ?>)";>
+									<div class="img-wrap cell cube small-12 medium-6" style="background-image: url(<?php echo $imgArr[0]; ?>)";>
+										<div class="inner">
 										</div>
 									</div>
 
@@ -432,10 +432,10 @@ Template Name: Home Page
 		
 		<section class="blue-squares">
 			<div class="grid-container">
-				<div class="block-rows grid-x grid-padding-x small-up-1 medium-up-1 xmedium-up-2">
+				<div class="cube-rows grid-x grid-padding-x small-up-1 medium-up-1 xmedium-up-2">
 					
-					<div class="block-row square top-left cell">
-						<div class="inner text-center">
+					<div class="cube-row square top-left cell">
+						<div class="inner cube text-center">
 						<?php if( have_rows('top_left') ):?>
 							<?php while ( have_rows('top_left') ) : the_row();?>	
 							
@@ -464,8 +464,8 @@ Template Name: Home Page
 						</div>
 					</div>
 
-					<div class="block-row square top-right cell">
-						<div class="inner">
+					<div class="cube-row square top-right cell">
+						<div class="inner cube">
 						<?php if( have_rows('top_right') ):?>
 							<?php while ( have_rows('top_right') ) : the_row();?>	
 							
@@ -494,8 +494,8 @@ Template Name: Home Page
 						</div>
 					</div>
 
-					<div class="block-row square bottom-left cell">
-						<div class="inner">
+					<div class="cube-row square bottom-left cell">
+						<div class="inner cube">
 							
 							<img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/lightbulb.svg"/>
 							
@@ -516,8 +516,8 @@ Template Name: Home Page
 						</div>
 					</div>
 
-					<div class="block-row square bottom-right cell">
-						<div class="inner text-center">
+					<div class="cube-row square bottom-right cell">
+						<div class="inner cube text-center">
 						<?php if( have_rows('bottom_right') ):?>
 							<?php while ( have_rows('bottom_right') ) : the_row();?>	
 							

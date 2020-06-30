@@ -87,6 +87,14 @@ add_image_size( 'three_col_polaroids_card',400, 298, true);
 
 add_action('init', 'custom_post_type_news', 0);
 
+
+
+add_filter( 'be_media_from_production_url', function() {
+	return 'https://www.welldoc.com/';
+});
+
+
+
 function custom_post_type_news() {
 
     $labels = array(

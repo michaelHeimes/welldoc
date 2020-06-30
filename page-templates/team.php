@@ -10,34 +10,46 @@ Template Post Type: page
 	<div class="page-head">
 		<div class="bg non-retina" style="background-color: #016ECD;"></div>
 		<div class="bg retina" style="background-color: #016ECD;"></div>
-		<div class="container">
+		<div class="grid-container container">
+			<div class="grid-x grid-padding-x">
+				
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
-					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
+					yoast_breadcrumb('<div class="breadcrumbs cell small-12">','</div>');
 				}
 			?>
-			<h1><?php the_title(); ?></h1>
+			<h1 class="cell small-12"><?php the_title(); ?></h1>
+			
+			</div>
 		</div>
+		
 	</div>
+	
 	<div class="sub-cat">
-		<div class="container">
-			<?php wp_nav_menu( array( 'menu' => 'Team Menu', 'menu_class' => '', 'menu_id' => '', 'container' => '', 'depth' => 0 ) ); ?>
-			<div class="search-r">
-				<div class="trigger">
-					<i aria-hidden="true" class="fa fa-search"></i>
+		<div class="grid-container container">
+			<div class="grid-x grid-padding-x align-middle">
+			
+			<?php wp_nav_menu( array( 'menu' => 'Team Menu', 'menu_class' => 'cell auto', 'menu_id' => '', 'container' => '', 'depth' => 0 ) ); ?>
+			
+
+			<div class="cell shrink">
+				<div class="search-r">
+					<div class="trigger"><i class="fa fa-search" aria-hidden="true"></i></div>
+					<div class="form">
+						<form method="get" action="<?php bloginfo('url'); ?>/">
+							<input placeholder="search" name="s" type="text">
+							<button type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
+						</form>
+					</div>
 				</div>
-				<div class="form">
-					<form method="get" action="<?php bloginfo('url'); ?>/">
-						<input placeholder="search" name="s" type="text">
-						<button type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
-					</form>
-				</div>
+			</div>
+			
 			</div>
 		</div>
 	</div>
 	
 	<div class="team-row">
-		<div class="container">
+		<div class="grid-container container">
 			
 			<?php if ( have_rows('content_modules') ) : ?>
 			<?php while ( have_rows('content_modules') ) : ?>

@@ -1,0 +1,51 @@
+.page-template-page-clinical-bibliography {
+	
+	.body {
+		padding-top: 4em;
+		
+		h1 {
+			font-weight: 900;
+			font-size: rem-calc(45);
+			text-align: left;
+			line-height: 1.045;
+			padding-bottom: 0.5em;
+			font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;	
+				
+			@include breakpoint(xmedium) {
+				font-size: rem-calc(60);	
+			}
+		}
+		
+		.accordion {
+			margin-bottom: 3em;
+		
+		.accordion-title {
+			border: 0;
+			padding: 0;
+			color: $black;
+			padding-top: 0.25em;
+			padding-bottom: 0.25em;
+		
+		&:before {		
+			right: 0;
+			transform: translateY(-50%);
+		}
+/*
+			font-size: rem-calc(30);
+			
+			@include breakpoint(xmedium) {
+				font-size: rem-calc(48);	
+			}
+*/
+			
+		}
+		
+		.accordion-content {
+			border: 0;
+		}
+		
+		}
+		
+	}
+	
+}

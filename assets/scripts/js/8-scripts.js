@@ -70,9 +70,9 @@ $(document).ready(function() {
 
 
 //	Block Rows
-	if ($(".block-rows").length) {
+	if ($(".cube-rows").length) {
 		
-		var $inner = $(".block-row .inner");
+		var $inner = $(".cube-row > .cube");
 		
 		function setBlockWidth() {
 			
@@ -1580,6 +1580,7 @@ $(document).ready(function() {
 
 	
 //      Accordions		
+/*
 	if( $('.accordion').length ) {
 		$( ".accordion" ).accordion({
 			heightStyle: "content",
@@ -1595,6 +1596,7 @@ $(document).ready(function() {
 			active: false
 		});
 	}
+*/
 
 	if( $('.phone-accordion').length ) {
 				
@@ -1805,6 +1807,158 @@ $( ".ui-accordion-header" ).each(function( index ) {
 		.addTo(controller);
 
 	}
+	
+	
+// 		Pinned Device-Team Scroll
+	if($('.devices-care-team').length ) {
+
+		var controller = new ScrollMagic.Controller(); 
+		var pinDuration = (2500);
+		var scrollDuration = (2000);
+		var tweenOffset = 500;
+		var scrollOffset = -(544 * 3);
+			
+		var scene = new ScrollMagic.Scene({
+		        triggerElement: ".devices-care-team",
+		        triggerHook: "onLeave",
+		        offset: 0,
+		        duration: pinDuration
+		})
+		.setPin('.devices-care-team')
+		.addTo(controller);
+
+		new ScrollMagic.Scene({
+			triggerElement: ".devices-care-team",
+	        triggerHook: "onLeave",
+	        offset: 0,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".devices-care-team", "scene-1")
+		.addTo(controller);
+	
+		new ScrollMagic.Scene({
+			triggerElement: ".devices-care-team",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 1,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".devices-care-team", "scene-2")
+		.addTo(controller);
+
+		new ScrollMagic.Scene({
+			triggerElement: ".devices-care-team",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 2,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".devices-care-team", "scene-3")
+		.addTo(controller);
+		
+		new ScrollMagic.Scene({
+			triggerElement: ".devices-care-team",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 3,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".devices-care-team", "scene-4")
+		.addTo(controller);
+		
+		new ScrollMagic.Scene({
+			triggerElement: ".devices-care-team",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 4,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".devices-care-team", "scene-5")
+		.addTo(controller);						
+
+		new ScrollMagic.Scene({
+			triggerElement: ".devices-care-team",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 5,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".devices-care-team", "scene-6")
+		.addTo(controller);	
+
+	}
+
+
+// 		Pinned Device-Team Scroll
+	if($('.product-panels-wrap').length ) {
+
+		var controller = new ScrollMagic.Controller(); 
+		var pinDuration = (3000);
+		var scrollDuration = (2500);
+		var tweenOffset = 500;
+		var scrollOffset = -(544 * 3);
+			
+		var scene = new ScrollMagic.Scene({
+		        triggerElement: ".product-panels-wrap",
+		        triggerHook: "onLeave",
+		        offset: -65,
+		        duration: pinDuration
+		})
+		.setPin('.product-panels-wrap')
+		.addTo(controller);
+
+		new ScrollMagic.Scene({
+			triggerElement: ".product-panels-wrap'",
+	        triggerHook: "onLeave",
+	        offset: 0,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".product-panels-wrap", "scene-1")
+		.addTo(controller);
+	
+		new ScrollMagic.Scene({
+			triggerElement: ".product-panels-wrap'",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 1,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".product-panels-wrap", "scene-2")
+		.addTo(controller);
+
+		new ScrollMagic.Scene({
+			triggerElement: ".product-panels-wrap'",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 2,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".product-panels-wrap", "scene-3")
+		.addTo(controller);
+		
+		new ScrollMagic.Scene({
+			triggerElement: ".product-panels-wrap",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 3,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".product-panels-wrap", "scene-4")
+		.addTo(controller);
+		
+		new ScrollMagic.Scene({
+			triggerElement: ".product-panels-wrap",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 4,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".product-panels-wrap", "scene-5")
+		.addTo(controller);						
+
+		new ScrollMagic.Scene({
+			triggerElement: ".product-panels-wrap",
+	        triggerHook: "onLeave",
+	        offset: tweenOffset * 5,
+	        duration: tweenOffset			
+		})
+		.setClassToggle(".product-panels-wrap", "scene-6")
+		.addTo(controller);	
+
+	}
+
+
 
 	
 // 		Multiple Conditions Phone 

@@ -65,6 +65,12 @@ Template Name: Content Modules
 			get_template_part('modules/employer-resources');
 		
 		endif;?>		
+
+		<?php if ( get_row_layout() == 'devices_care_team' ) : 
+		
+			get_template_part('modules/devices-care-team');
+		
+		endif;?>	
 		
 
 		<?php if ( get_row_layout() == 'resources' ) : ?>
@@ -267,7 +273,7 @@ Template Name: Content Modules
 		<?php if ( get_row_layout() == 'three_col_polaroids_cards' ) : ?>
 			
 			<div class="three-col-polaroid-cards <?php the_sub_field('custom_class');?>">
-				<div class="container">
+				<div class="grid-container container">
 					<div class="wrap">
 					<?php if( have_rows('polaroid_cards') ):?>
 						<?php while ( have_rows('polaroid_cards') ) : the_row();?>	
@@ -863,7 +869,7 @@ Template Name: Content Modules
 		
 			<div class="split-slider-wrap <?php the_sub_field('custom_class');?>">
 				
-				<div class="container">
+				<div class="grid-container container">
 					
 					<div class="split-slider-inner">
 				
@@ -958,7 +964,7 @@ Template Name: Content Modules
 		
 		<?php if ( get_row_layout() == 'text' ) : ?>
 		<div class="text-section module background-color-<?php the_sub_field('background_color'); ?> text-color-<?php the_sub_field('text_color'); ?> <?php the_sub_field('text_block_class');?> <?php if ( $centeredHeading = get_sub_field('centered_heading') ) : ?>centered-heading<?php endif;?>">
-			<div class="container">
+			<div class="container grid-container">
 				<?php if ( $heading = get_sub_field('heading') ) : ?>
 				<h2><?php echo $heading; ?></h2>
 				<div class="text-section-h2-pipe"></div>
@@ -1550,7 +1556,7 @@ Template Name: Content Modules
 		<?php endif; ?>
 		
 		<?php if ( get_row_layout() == 'our_team' ) : ?>
-		<div class="our-team container">
+		<div class="our-team grid-container container">
 			<?php if ( $background_image = get_sub_field('background_image') ) : ?>
 			<div class="our-team-img">
 				<div style="background-image:url(<?php echo $background_image['url']; ?>);"></div>
@@ -1650,7 +1656,7 @@ Template Name: Content Modules
 		
 		<?php if ( get_row_layout() == 'partners' ) : ?>
 		<div class="truster-row">
-			<div class="container">
+			<div class="grid-container container">
 				<?php if ( $heading = get_sub_field('heading') ) : ?>
 				<h3><?php echo $heading; ?></h3>
 				<?php endif; ?>
@@ -2924,7 +2930,7 @@ Template Name: Content Modules
 		
 		<? if ( get_row_layout() == 'text_editor') : ?>	
 			<div class="<?php the_sub_field('custom_class');?>">
-				<div class="container">	
+				<div class="grid-container container">	
 					
 				<?php the_sub_field('wysiwyg');?>
 				
