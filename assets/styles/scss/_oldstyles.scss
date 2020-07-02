@@ -1105,7 +1105,6 @@ body .widget input[type='submit'].blue:hover, .btn.btn-outline.blue:hover {
 
 /* Container
 ------------------------------------------------------------------------------*/
-/*
 .container-2 {
   padding: 0 20px;
   width: 1054px;
@@ -1127,7 +1126,6 @@ body .widget input[type='submit'].blue:hover, .btn.btn-outline.blue:hover {
   margin: auto;
   max-width: 100%;
 }
-*/
 
 .watch-video.container {
 	max-width: 930px;
@@ -4998,22 +4996,22 @@ a.play:before {
   margin-top: -41px;
 }
 
-.sidebar:before {
-  background-color: #23242a;
-  border-radius: 4px;
-  bottom: 0;
-  content: "";
-  left: 0;
-  margin: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
+.sidebar.blog-form-sidebar .inner {
+  background-color: $gray-bg;
+  
+  .gform_wrapper ul.gform_fields li.gfield {
+	  padding-right: 0;
+  }
+  
+  .label {
+	  background: transparent;
+  }
+  
 }
 
 .widget {
 	color: #fff;
-	padding: 15px;
+	padding: 22px;
 }
 
 .widget .btn {
@@ -9430,6 +9428,7 @@ span#b16 {
 	background-color: #fff;
 }
 
+/*
 .text-section h2 {
 	color: #ffffff;
 	font-weight:700;
@@ -9440,6 +9439,7 @@ span#b16 {
 	font-family: museo-sans, sans-serif;
 	word-spacing: 2px;
 }
+*/
 
 .text-section.centered-heading {
 	text-align: center;
@@ -10069,6 +10069,7 @@ p.thin_text_above_image {
 }
 
 .our-team-text ul li .inner {
+	width: 100%;
 		background: #fff;
 	position: relative;
 
@@ -10089,10 +10090,11 @@ p.thin_text_above_image {
 .our-team-text ul li .shadow {
     background: transparent;
     position: absolute;
-    left: 16px;
-    right: 16px;
+    left: .9375rem;
+    right: .9375rem;
     bottom: 0;
     height: 32px;
+    width: auto;
     z-index: -1;
     -webkit-box-shadow: 0 2px 41px 0 rgba(0,0,0,0.3);
     box-shadow: 0 2px 41px 0 rgba(0,0,0,0.3);
@@ -12905,6 +12907,15 @@ p.form-field.email.required > label:after {
 	margin-top: 0;
 }
 
+.resource-newsletter-box {
+	.inner {
+		background: $brand-blue;
+		color: $white;
+		padding: 1.5em;
+		border-radius: 8px;
+	}
+}
+
 .resource-newsletter-box .gform_wrapper ul.gform_fields li.gfield {
 	margin-top: 0;
 	padding-right: 0;
@@ -12957,9 +12968,18 @@ p.form-field.email.required > label:after {
 }
 
 .resource-newsletter-box .gform_wrapper .gform_footer input[type=submit] {
-	background: transparent;
+	background: $white;
 	border-color: #fff;
-	color: #fff;
+	color: $black;
+	max-width: 100%;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .41px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 1.18;
+    padding: 10px 30px 8px;
 }
 
 .resource-newsletter-box .gform_wrapper .gform_footer input[type=submit]:hover {
@@ -13568,6 +13588,8 @@ a#sticky-cta > img {
 
 /* Split Slider */
 .split-slider-inner {
+	position: relative;
+	z-index: 2;
 	padding: 0;
 	overflow: hidden;
 	display: -webkit-box;
@@ -14598,6 +14620,30 @@ p.calculator-directions span.hide-for-mobile {
 /* For Health Plans */
 .split-slider-wrap {
     padding-bottom: 107px;
+    position: relative;
+    
+	&:before {
+		content: '';
+		position: absolute;
+		left: 72%;
+	    top: 1.5em;
+	    width: 400px;
+	    height: 400px;
+	    background: url(/wp-content/themes/welldoc/assets/images/globe.svg);
+	    background-size: contain;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 2%;
+	    bottom: 2.5em;
+	    width: 250px;
+	    height: 250px;
+	    background: url(/wp-content/themes/welldoc/assets/images/globe.svg);
+	    background-size: contain;
+	}
+    
 }
 
 .gradient-top {
@@ -14632,6 +14678,10 @@ p.calculator-directions span.hide-for-mobile {
 .split-slider-title.text-section .container,
 .health-plans-accordion-title .container {
 	max-width: 1000px;
+}
+
+.split-slider-title {
+	background: $brand-blue;
 }
 
 .split-slider-title.text-section h2,
@@ -15589,6 +15639,7 @@ p.calculator-directions span.hide-for-mobile {
 }
 
 .about-page-find-us > .container {
+	padding-top: 100px;
 	max-width: 1000px;
 	padding-bottom: 75px;
 	display: -webkit-box;

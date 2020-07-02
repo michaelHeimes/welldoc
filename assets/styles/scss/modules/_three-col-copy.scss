@@ -1,0 +1,31 @@
+.three-col-copy {
+	
+	h2 {
+		padding-bottom: 0.4em;
+	}	
+	
+	.cards-wrap {
+		
+		.single-card {
+			margin-bottom: 2em;
+			
+			h4 {
+				text-transform: uppercase;
+				font-weight: 900;
+				font-size: rem-calc(12);
+				letter-spacing: 1.29px;
+				line-height: 1.75;
+			}
+			
+			p {
+				font-weight: 300;
+				font-size: rem-calc(18);
+				letter-spacing: 0.56px;
+				line-height: 1.555;
+			}
+			
+		}
+		
+	}
+	
+}

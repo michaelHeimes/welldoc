@@ -13,11 +13,13 @@ Template Name: Getting Started
 		<div class="bg retina" style="background-image: url(<?php echo $background_image['sizes']['banner_image_2x']; ?>);"></div>
 		<?php endif; ?>
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<?php if ( $heading = $banner['heading'] ) : ?>
 			<h1><?php echo $heading; ?></h1>
 			<?php endif; ?>

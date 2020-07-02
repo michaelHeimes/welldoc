@@ -11,7 +11,7 @@ Template Post Type: page
 	<div class="grid-container container">
 		<div class="contact-wrap grid-x grid-padding-x">
 	
-				<div class="left cell small-12 xmedium-6">
+				<div class="left cell small-12 xmedium-6 xmedium-offset-1">
 					
 					<h1><?php the_field('heading');?></h1>
 					<p><?php the_field('instructions');?></p>
@@ -30,18 +30,22 @@ Template Post Type: page
 				
 				</div>
 			
-				<div id="tabs" class="right cell small-12 xmedium-6">
+				<div id="tabs" class="right cell small-12 xmedium-5">
+<!--
 					<ul id="tab-nav">
 						<li><a href="#tabs-1">For Organizations</a></li>
 						<li><a href="#tabs-2">For Individuals</a></li>
 					</ul>
+-->
 					<div class="inner">
-						<div id="tabs-1" class="tabs_content" style="display: none;">
+						<div id="tabs-1">
 							<?php gravity_form( 8, false, false, false, '', false );?>
 						</div>
+<!--
 						<div id="tabs-2" class="tabs_content" style="display: none;">
 							<?php gravity_form( 10, false, false, false, '', false );?>
 						</div>
+-->
 					</div>
 				</div>
 			

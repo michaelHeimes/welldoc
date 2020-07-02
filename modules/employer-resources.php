@@ -21,6 +21,8 @@
 					        
 						<div class="single-card cell small-12 medium-6 xmedium-4">
 							
+							<a href="<?php echo the_permalink();?>">
+							
 							<div class="thumb-wrap">
 								
 								<?php the_post_thumbnail('resource_card');?>

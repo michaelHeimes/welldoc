@@ -23,7 +23,7 @@
 				
 				<div class="grid-x grid-padding-x align-middle">
 				
-					<div class="left half cell small-12 medium-12 xmedium-7">
+					<div class="left half cell small-12 medium-12 xmedium-6">
 						
 						<h1><?php the_sub_field('heading');?></h1>
 						
@@ -110,7 +110,7 @@
 						
 					</div>
 			
-					<div class="right half cell small-12 medium-12 xmedium-5">
+					<div class="right half cell small-12 medium-12 xmedium-5 xmedium-offset-1">
 						<?php 
 						$image = get_sub_field('image');
 						if( !empty( $image ) ): ?>

@@ -1,5 +1,28 @@
 .page-template-contact-us {
+	background-color: $gray-bg;
+	position: relative;
 	
+	&:before {
+		content: '';
+		position: absolute;
+		left: -4%;
+	    top: 8.5em;
+	    width: 500px;
+	    height: 500px;
+	    background: url(/wp-content/themes/welldoc/assets/images/globe.svg);
+	    background-size: contain;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 88%;
+	    top: 27em;
+	    width: 250px;
+	    height: 250px;
+	    background: url(/wp-content/themes/welldoc/assets/images/globe.svg);
+	    background-size: contain;
+	}
 
 .contact-wrap {
 	padding-top: 82px;
@@ -237,6 +260,33 @@ body.page-template-thank-you {
 	font-size: 11px;
 	line-height: 1.1818;
 	text-transform: uppercase;
+}
+
+.contact-wrap .gform_wrapper {
+	.gform_footer {
+		text-align: center;
+	
+		input[type=submit] {
+			background-color: $brand-blue;
+			display: inline-block;
+		    position: relative;
+		    z-index: 5;
+		    min-width: 238px;
+		    max-width: 100%;
+		    font-weight: 900;
+		    text-transform: uppercase;
+		    font-size: 14px;
+		    letter-spacing: .41px;
+		    border-radius: 30px;
+		    text-align: center;
+		    line-height: 1.18;
+		    padding: 10px 30px 8px;
+		    box-shadow: 0 3px 1px -2px rgba(11,120,227,.2), 0 2px 2px 0 rgba(6,63,120,.14), 0 1px 5px 0 rgba(6,63,120,.12);
+			
+		}
+		
+	}
+	
 }
 
 .contact-wrap .gform_wrapper .gfield_required {

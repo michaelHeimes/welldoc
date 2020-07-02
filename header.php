@@ -91,7 +91,7 @@
 								</div>
 								
 								<div id="alert-close-wrap" class="alert-half cell shrink">
-									<i class="fas fa-times"></i>
+									<button id="alert-close"><i class="fas fa-times"></i></button>
 								</div>
 								
 							</div>
@@ -234,7 +234,7 @@
 					<div class="label-wrap p-1">				
 						<?php while ( have_rows('panel_1') ) : the_row();?>	
 						
-							<div class="label-heading">
+							<div class="label-heading show-for-xmedium">
 								<?php the_sub_field('heading');?>
 							</div>
 					
@@ -246,7 +246,7 @@
 					<div class="label-wrap p-2">				
 						<?php while ( have_rows('panel_2') ) : the_row();?>	
 						
-							<div class="label-heading">
+							<div class="label-heading show-for-xmedium">
 								<?php the_sub_field('heading');?>
 							</div>
 					
@@ -258,7 +258,7 @@
 					<div class="label-wrap p-3">				
 						<?php while ( have_rows('panel_3') ) : the_row();?>	
 						
-							<div class="label-heading">
+							<div class="label-heading show-for-xmedium">
 								<?php the_sub_field('heading');?>
 							</div>
 					
@@ -270,7 +270,7 @@
 					<div class="label-wrap p-4">				
 						<?php while ( have_rows('panel_4') ) : the_row();?>	
 						
-							<div class="label-heading">
+							<div class="label-heading show-for-xmedium">
 								<?php the_sub_field('heading');?>
 							</div>
 					
@@ -282,7 +282,7 @@
 					<div class="label-wrap p-5">				
 						<?php while ( have_rows('panel_5') ) : the_row();?>	
 						
-							<div class="label-heading">
+							<div class="label-heading show-for-xmedium">
 								<?php the_sub_field('heading');?>
 							</div>
 					
@@ -310,7 +310,7 @@
 							
 							<div class="grid-x grid-padding-x align-center align-middle">
 								
-								<div class="cell small-5">
+								<div class="cell small-11 small-offset-1 xmedium-3 xmedium-offset-2">
 						
 									<h1><?php the_sub_field('heading');?></h1>
 									
@@ -318,7 +318,7 @@
 								
 								</div>
 								
-								<div class="img-wrap cell small-5">
+								<div class="img-wrap cell small-5 show-for-xmedium">
 									
 									<?php 
 									$image = get_sub_field('image');
@@ -340,7 +340,7 @@
 							
 							<div class="grid-x grid-padding-x align-center align-middle">
 								
-								<div class="cell small-5">
+								<div class="cell small-11 small-offset-1 xmedium-3 xmedium-offset-2">
 						
 									<h1><?php the_sub_field('heading');?></h1>
 									
@@ -348,7 +348,7 @@
 								
 								</div>
 								
-								<div class="img-wrap cell small-5">
+								<div class="img-wrap cell small-5 show-for-xmedium">
 									
 									<?php 
 									$image = get_sub_field('image');
@@ -370,7 +370,7 @@
 							
 							<div class="grid-x grid-padding-x align-center align-middle">
 								
-								<div class="cell small-5">
+								<div class="cell small-11 small-offset-1 xmedium-3 sxmedium-offset-2">
 						
 									<h1><?php the_sub_field('heading');?></h1>
 									
@@ -378,7 +378,7 @@
 								
 								</div>
 								
-								<div class="img-wrap cell small-5">
+								<div class="img-wrap cell small-5 show-for-xmedium">
 									
 									<?php 
 									$image = get_sub_field('image');
@@ -400,7 +400,7 @@
 							
 							<div class="grid-x grid-padding-x align-center align-middle">
 								
-								<div class="cell small-5">
+								<div class="cell small-11 small-offset-1 xmedium-3 xmedium-offset-2">
 						
 									<h1><?php the_sub_field('heading');?></h1>
 									
@@ -408,7 +408,7 @@
 								
 								</div>
 								
-								<div class="img-wrap cell small-5">
+								<div class="img-wrap cell small-5 show-for-xmedium">
 									
 									<?php 
 									$image = get_sub_field('image');
@@ -430,7 +430,7 @@
 							
 							<div class="grid-x grid-padding-x align-center align-middle">
 								
-								<div class="cell small-5">
+								<div class="cell small-11 small-offset-1 xmedium-3 xmedium-offset-2">
 						
 									<h1><?php the_sub_field('heading');?></h1>
 									

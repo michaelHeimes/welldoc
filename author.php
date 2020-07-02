@@ -4,11 +4,13 @@
 <div class="body">
 	<div class="page-head">
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<?php
 				$author = get_user_by( 'slug', get_query_var('author_name') );
 				$author_id = $author->ID;

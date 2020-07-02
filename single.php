@@ -222,9 +222,7 @@
 								$more_terms =  (implode( ', ', $category_list ));
 															
 								$combo = implode( ', ', array( '1st' => $customTaxonomyTerms, $more_terms));
-								
-								var_dump($combo);
-															
+																							
 								//query arguments
 								$args3 = array(
 								    'post_type' => 'insights',

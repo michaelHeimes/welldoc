@@ -7,11 +7,13 @@
 		<div class="bg retina" style="background-image: url(<?php echo $header_image['sizes']['banner_image_2x']; ?>);"></div>
 		<?php endif; ?>
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<?php if ( $header_heading = get_field( 'header_heading', 'option' ) ) : ?>
 			<h1><?php echo $header_heading; ?></h1>
 			<?php endif; ?>

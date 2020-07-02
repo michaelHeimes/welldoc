@@ -23,9 +23,9 @@ Template Name: Content Modules
 		
 		endif;?>
 
-		<?php if ( get_row_layout() == 'two_columns_icons_left_and_copy' ) : 
+		<?php if ( get_row_layout() == 'three_columns_icons_left_and_copy' ) : 
 		
-			get_template_part('modules/two-cols-icon-left-copy');
+			get_template_part('modules/three-cols-icon-left-copy');
 		
 		endif;?>		
 
@@ -34,6 +34,12 @@ Template Name: Content Modules
 			get_template_part('modules/three-cols-icon-top-copy');
 		
 		endif;?>	
+
+		<?php if ( get_row_layout() == 'three_columns_copy' ) : 
+		
+			get_template_part('modules/three-cols-copy');
+		
+		endif;?>
 
 		<?php if ( get_row_layout() == 'four_columns_icons_top_and_copy' ) : 
 		
@@ -573,6 +579,7 @@ Template Name: Content Modules
 			
 			
 				<div class="text">
+<!--
 					<?php if ( $show_breadcrumbs = get_sub_field('show_breadcrumbs') ) : ?>
 					<?php
 						if ( function_exists('yoast_breadcrumb') ) {
@@ -580,6 +587,7 @@ Template Name: Content Modules
 						}
 					?>
 					<?php endif; ?>
+-->
 <!--
 					<?php if ( $heading = get_sub_field('heading') ) : ?>
 					<h1 class="<?php echo $headingColor; ?>"><?php echo $heading; ?></h1>
@@ -867,7 +875,7 @@ Template Name: Content Modules
 
 		<?php if ( get_row_layout() == 'split_slider' ) : ?>
 		
-			<div class="split-slider-wrap <?php the_sub_field('custom_class');?>">
+			<section class="split-slider-wrap module background-gradient <?php the_sub_field('custom_class');?>  <?php if(get_sub_field('remove_top_padding') == 'true'):?>no-tp<?php endif;?> <?php if(get_sub_field('remove_bottom_padding') == 'true'):?>no-bp<?php endif;?>">
 				
 				<div class="grid-container container">
 					
@@ -926,7 +934,7 @@ Template Name: Content Modules
 					
 				</div>
 
-			</div>
+			</section>
 					
 		<?php endif;?>
 		
@@ -964,10 +972,9 @@ Template Name: Content Modules
 		
 		<?php if ( get_row_layout() == 'text' ) : ?>
 		<div class="text-section module background-color-<?php the_sub_field('background_color'); ?> text-color-<?php the_sub_field('text_color'); ?> <?php the_sub_field('text_block_class');?> <?php if ( $centeredHeading = get_sub_field('centered_heading') ) : ?>centered-heading<?php endif;?>">
-			<div class="container grid-container">
+			<div class="grid-container">
 				<?php if ( $heading = get_sub_field('heading') ) : ?>
 				<h2><?php echo $heading; ?></h2>
-				<div class="text-section-h2-pipe"></div>
 				<?php endif; ?>
 				<?php if ( $content = get_sub_field('content') ) : ?>
 				<div class="copy"><?php echo $content; ?></div>
@@ -1556,7 +1563,7 @@ Template Name: Content Modules
 		<?php endif; ?>
 		
 		<?php if ( get_row_layout() == 'our_team' ) : ?>
-		<div class="our-team grid-container container">
+		<div class="our-team grid-container">
 			<?php if ( $background_image = get_sub_field('background_image') ) : ?>
 			<div class="our-team-img">
 				<div style="background-image:url(<?php echo $background_image['url']; ?>);"></div>
@@ -1570,9 +1577,9 @@ Template Name: Content Modules
 					<?php if ( $content = get_sub_field('content') ) : ?>
 					<p><?php echo $content; ?></p>
 					<?php endif; ?>
-					<ul>
+					<ul class="grid-x grid-padding-x">
 						<?php while ( has_sub_field('items') ) : ?>
-						<li>
+						<li class="cell small-12 xmedium-6">
 							<div class="shadow"></div>
 							<div class="inner">
 						

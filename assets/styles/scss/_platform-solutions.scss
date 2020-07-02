@@ -7,11 +7,15 @@
 		position: absolute;
 		height: 80%;
 		top: 46%;
-		left: 100px;
+		left: 0px;
 		display: flex;
 	    flex-direction: column;
 	    justify-content: space-between;
 	    transform: translateY(-50%);
+	    
+	    @include breakpoint(xmedium) {
+		    left: 100px;
+	    }
 	    
 	&:before {
 		content: '';
@@ -65,6 +69,28 @@
 		min-height: 100vh;
 		position: relative;
 		
+		&:before {
+			content: '';
+			position: absolute;
+			left: 72%;
+		    top: 5.5em;
+		    width: 500px;
+		    height: 500px;
+		    background: url(/wp-content/themes/welldoc/assets/images/globe.svg);
+		    background-size: contain;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 22%;
+		    bottom: 3.5em;
+		    width: 250px;
+		    height: 250px;
+		    background: url(/wp-content/themes/welldoc/assets/images/globe.svg);
+		    background-size: contain;
+		}
+		
 		.panel {
 			position: absolute;
 			left: 0;
@@ -82,7 +108,7 @@
 			
 			p {
 				font-weight: 300;
-				font-size: rem-calc(24);
+				font-size: rem-calc(18);
 				color: $white;
 				letter-spacing: 0.75px;
 				line-height: 1.1666;
@@ -101,11 +127,16 @@
 			margin: auto;
 			
 			h1 {
-				font-size: rem-calc(88);
+				font-size: rem-calc(30);
 				text-align: center;
 				line-height: 1.045;
 				font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;	
 				font-weight: 900;
+				
+				@include breakpoint(xmedium) {
+					font-size: rem-calc(72);
+				}
+				
 			}
 			
 			p {
@@ -119,14 +150,18 @@
 		&:not(.opening) {
 			
 			h1 {
+				font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;	
+				font-weight: 900;
 				font-size: rem-calc(24);
 				color: $white;
 				letter-spacing: 0;
 			}
 			
+/*
 			.img-wrap {
-				margin-left: -15%;
+				margin-left: -12%;
 			}
+*/
 			
 		}
 				

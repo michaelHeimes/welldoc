@@ -3,13 +3,6 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
-/*********************
-VARIABLES
-*********************/
-$brand-blue: #1579D9;
-$gray-bg: #F1F2F6;
-$alt-black: #3D4456;
-
 
 /*********************
 FONT AWESOME PSEUDO RENDERING
@@ -37,9 +30,18 @@ PAGE TOPS
 SIDEBARS
 *********************/
 .blog-form-sidebar {
+	h3 {
+		color: $black;
+	}
+	
+	.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+	#search_block input[type=search], #search_block input[type=text], .post-password-form input[type=search], .post-password-form input[type=text], .search-form input[type=search], .search-form input[type=text] {
+		background: $white;
+	}
+	
 	.gform_body {
 		label.gfield_label {
-			color: $white;
+			color: $black;
 		}
 		
 		ul.gfield_radio {
@@ -47,13 +49,30 @@ SIDEBARS
 				display: flex;
 				
 				label {
-					color: $white;
+					color: $black;
 				}
 				
 			}
+			
+
+			
 		}
 		
 	}
+	
+	.widget.widget-share .label,
+	.widget-media h4,
+	.widget.widget-share ul li a,
+	.widget_inner a,
+	.widget-media .cc .fa,
+	.widget p {
+		color: $black;
+	}
+	
+	.btn.btn-outline.blue {
+		color: $white;
+	}
+	
 }
 
 /*********************
@@ -64,7 +83,7 @@ section.module {
 	padding-bottom: 6.5625em;
 	
 	p {
-		font-family: 300;
+		font-weight: 300;
 		font-size: rem-calc(18);
 		letter-spacing: 0.56px;
 		line-height: 1.555;	
@@ -391,7 +410,9 @@ li.small-heading > a {
     
 }
 
-
+.text-section h2,
+.health-plans-accordion-title h2,
+.split-slider-title.text-section h2,
 h2.large-heading,
 h3.large-heading,
 a.accordion-title {
@@ -510,6 +531,7 @@ PIES
 	display: flex;
 	justify-content: space-between;
 	position: absolute;	
+	transform: scale(0.5);
 }
 
 .health-plans {

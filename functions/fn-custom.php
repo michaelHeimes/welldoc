@@ -78,8 +78,8 @@ add_image_size( 'quote_author_2x', 480, 480, true);
 add_image_size( 'video_card', 376, 404, true);
 add_image_size( 'video_card_2x', 752, 808, true);
 
-add_image_size( 'blog_thumb', 304, 216, true);
-add_image_size( 'blog_thumb_2x', 608, 432, true);
+add_image_size( 'blog_thumb', 394, 280, true);
+add_image_size( 'blog_thumb_2x', 788, 560, true);
 
 add_image_size( 'resource_card',646, 462, true);
 

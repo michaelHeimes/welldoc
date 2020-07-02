@@ -55,6 +55,7 @@
 		text-align: right;
 			
 		i {
+			color: $white;
 			font-size: rem-calc(22);
 		}
 				
@@ -68,6 +69,7 @@
 	padding-top: 1.25em;
 	padding-bottom: 1.25em;
 	z-index: 999;
+	width: 100% !important;
 	
 	a.platform-link,
 	.main-menu a {

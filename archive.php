@@ -5,7 +5,7 @@
 	
 		<div class="page-head">
 			<div class="container">		
-				<div class="breadcrumbs"><span><span><a href="<?php echo home_url();?>">Home</a> // <a href="<?php echo home_url();?>/latest-news">Latest News</a> // <span class="breadcrumb_last" aria-current="page"><?php echo the_archive_title();?></span></span></span></div>
+<!-- 				<div class="breadcrumbs"><span><span><a href="<?php echo home_url();?>">Home</a> // <a href="<?php echo home_url();?>/latest-news">Latest News</a> // <span class="breadcrumb_last" aria-current="page"><?php echo the_archive_title();?></span></span></span></div> -->
 				
 				<h1><?php echo the_archive_title();?></h1>
 			</div>

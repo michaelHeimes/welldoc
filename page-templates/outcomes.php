@@ -14,11 +14,13 @@ Template Name: Outcomes
 		<?php endif; ?>
 		<div class="container">
 			<div class="text">
+<!--
 				<?php
 					if ( function_exists('yoast_breadcrumb') ) {
 						yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 					}
 				?>
+-->
 				<?php if ( $heading = $banner['heading'] ) : ?>
 				<h1><?php echo $heading; ?></h1>
 				<?php endif; ?>

@@ -11,11 +11,13 @@ Template Post Type: page
 		<div class="grid-container container">
 			<div class="grid-x grid-padding-x">
 				
+<!--
 				<?php
 					if ( function_exists('yoast_breadcrumb') ) {
 						yoast_breadcrumb('<div class="breadcrumbs cell small-12">','</div>');
 					}
 				?>
+-->
 				<h1 class="cell small-12"><?php the_title(); ?></h1>
 			
 			</div>

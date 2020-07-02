@@ -8,12 +8,12 @@
 				<?php $src_2x = wp_get_attachment_image_src( get_post_thumbnail_id(), 'blog_thumb_2x', true ); ?>
 				<?php $img = $src[0]; ?>
 				<?php $img_2x = $src_2x[0]; ?>
-				<img class="post-thumb" height="274" width="386" src="<?php echo $img; ?>" srcset="<?php echo $img; ?>, <?php echo $img_2x; ?> 2x" alt="<?php the_title(); ?>" />
+				<img class="post-thumb" height="280" width="394" src="<?php echo $img; ?>" srcset="<?php echo $img; ?>, <?php echo $img_2x; ?> 2x" alt="<?php the_title(); ?>" />
 				<?php else : ?>
 				<?php $output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $content, $matches ); ?>
 				<?php $first_img = $matches[1][0]; ?>
 				<?php if ( !empty($first_img) ) : ?>
-				<img class="post-thumb" height="274" width="386" src="<?php echo $img; ?>" alt="<?php the_title(); ?>" />
+				<img class="post-thumb" height="280" width="394" src="<?php echo $img; ?>" alt="<?php the_title(); ?>" />
 				<?php endif; ?>
 				<?php endif; ?>
 			</a>

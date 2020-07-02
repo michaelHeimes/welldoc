@@ -9,11 +9,13 @@ Template Name: Demo
 	<?php $banner = get_field('banner'); ?>
 	<div class="page-head">
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<?php if ( $heading = $banner['heading'] ) : ?>
 			<h1 class="fw"><?php echo $heading; ?></h1>
 			<?php endif; ?>

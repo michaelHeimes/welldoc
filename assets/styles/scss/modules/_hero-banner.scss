@@ -49,6 +49,7 @@
 		text-align: left;
 		line-height: 1.045;
 		font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;	
+		padding-bottom: .14em;
 			
 		@include breakpoint(xmedium) {
 			font-size: rem-calc(60);	
@@ -56,13 +57,15 @@
 			
 	}
 	
-	.copy-wrap p {
+	.copy-wrap p,
+	p.copy-wrap {
 		font-weight: 300;
 		font-size: rem-calc(18);
 		color: $white;
 		letter-spacing: 0.56px;
 		text-align: left;
 		line-height: 1.555;
+		padding-bottom: 0.4em;
 	}
 	
 	.buttons-wrap {

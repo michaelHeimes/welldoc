@@ -43,11 +43,13 @@ Template Post Type: page
 		<?php endif; ?>
 		
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<div class="text">
 				<h1><?php echo $item->post_title; ?></h1>
 				<?php echo $feature_content; ?>

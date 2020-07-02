@@ -65,8 +65,9 @@ CSS file.
 @include foundation-float-classes;
 
 // Import your custom styles
-@import "global";
+@import "variables";
 @import "oldstyles";
+@import "global";
 @import "vendor";
 @import "header";
 @import "footer";
@@ -81,7 +82,8 @@ CSS file.
 
 @import "modules/hero-banner";
 @import "modules/image-text";
-@import "modules/two-cols-icons-left-copy";
+@import "modules/three-col-copy";
+@import "modules/three-cols-icons-left-copy";
 @import "modules/three-col-icon-top-copy";
 @import "modules/contained-block";
 @import "modules/full-width-img";

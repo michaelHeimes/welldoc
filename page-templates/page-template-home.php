@@ -29,9 +29,9 @@ Template Name: Home Page
 						
 						<?php if( $copy = get_field('hero_copy')):?>
 						
-							<div class="copy-wrap">
+							<p class="copy-wrap">
 								<?php echo $copy;?>
-							</div>
+							</p>
 						
 						<?php endif;?>	
 						
@@ -129,6 +129,9 @@ Template Name: Home Page
 													<div id="label_1" class="single-condition-label">
 														<?php while ( have_rows('label_1') ) : the_row();?>
 															<p class="label-title"><?php the_sub_field('title');?></p>
+															<?php if($footnote = get_sub_field('footnote')):?>
+															<p class="footnote"><?php echo $footnote;?></p>
+															<?php endif;?>
 														<?php endwhile;?>
 													</div>
 													<?php endif;?>	
@@ -137,6 +140,9 @@ Template Name: Home Page
 													<div id="label_2" class="single-condition-label">
 														<?php while ( have_rows('label_2') ) : the_row();?>
 															<p class="label-title"><?php the_sub_field('title');?></p>
+															<?php if($footnote = get_sub_field('footnote')):?>
+															<p class="footnote"><?php echo $footnote;?></p>
+															<?php endif;?>
 														<?php endwhile;?>
 													</div>
 													<?php endif;?>	
@@ -145,6 +151,9 @@ Template Name: Home Page
 													<div id="label_3" class="single-condition-label">
 														<?php while ( have_rows('label_3') ) : the_row();?>
 															<p class="label-title"><?php the_sub_field('title');?></p>
+															<?php if($footnote = get_sub_field('footnote')):?>
+															<p class="footnote"><?php echo $footnote;?></p>
+															<?php endif;?>
 														<?php endwhile;?>
 													</div>
 													<?php endif;?>	
@@ -153,6 +162,9 @@ Template Name: Home Page
 													<div id="label_4" class="single-condition-label">
 														<?php while ( have_rows('label_4') ) : the_row();?>
 															<p class="label-title"><?php the_sub_field('title');?></p>
+															<?php if($footnote = get_sub_field('footnote')):?>
+															<p class="footnote"><?php echo $footnote;?></p>
+															<?php endif;?>
 														<?php endwhile;?>
 													</div>
 													<?php endif;?>												
@@ -756,62 +768,62 @@ Template Name: Home Page
 						
 						<div class="grid-x grid-padding-x">
 						
-					<?php
-					$featured_posts = get_field('media_links');
-					if( $featured_posts ): 
-					foreach( $featured_posts as $post ):
-					setup_postdata($post);?>
-				
-				
-							<div class="single-media-link cell shrink">
-								
-								<div class="inner">
-								
-									<?php 
-									$image = get_field('background_image');
-									$size = 'full'; // (thumbnail, medium, large, full or custom size)
-									if( $image ) {
-										echo wp_get_attachment_image( $image, $size );
-									}
-									?>		
-																
-									<div class="mask"></div>
-									
-									<div class="text-wrap">
-									
-										<p><?php 
-											if ( 'news' == get_post_type() ){
-												$terms = get_the_terms( $post->ID , 'type-news' ); foreach ( $terms as $term ) { 
-													if ($term->slug == 'press-release') {
-														echo $term->name;
-													}
-												}	
-												$terms = get_the_terms( $post->ID , 'type-news' ); foreach ( $terms as $term ) { 
-													if ($term->slug == 'media-coverage') {
-														echo 'Press';
-													}
-												}
+							<?php
+							$featured_posts = get_field('media_links');
+							if( $featured_posts ): 
+							foreach( $featured_posts as $post ):
+							setup_postdata($post);?>
+						
+						
+									<div class="single-media-link cell shrink">
+										
+										<div class="inner">
+										
+											<?php 
+											$image = get_field('background_image');
+											$size = 'full'; // (thumbnail, medium, large, full or custom size)
+											if( $image ) {
+												echo wp_get_attachment_image( $image, $size );
 											}
+											?>		
+																		
+											<div class="mask"></div>
 											
+											<div class="text-wrap">
 											
-											if ( 'events' == get_post_type() ){ echo 'Events';}
-										?></p>
-										
-										<h3><?php the_title(); ?></h3>
-										
-										<div class="read-now-wrap">
-											<a href="<?php the_permalink(); ?>">Read Now <i class="fas fa-arrow-right"></i></a>
+												<p><?php 
+													if ( 'news' == get_post_type() ){
+														$terms = get_the_terms( $post->ID , 'type-news' ); foreach ( $terms as $term ) { 
+															if ($term->slug == 'press-release') {
+																echo $term->name;
+															}
+														}	
+														$terms = get_the_terms( $post->ID , 'type-news' ); foreach ( $terms as $term ) { 
+															if ($term->slug == 'media-coverage') {
+																echo 'Press';
+															}
+														}
+													}
+													
+													
+													if ( 'events' == get_post_type() ){ echo 'Events';}
+												?></p>
+												
+												<h3><?php the_title(); ?></h3>
+												
+												<div class="read-now-wrap">
+													<a href="<?php the_permalink(); ?>">Read Now <i class="fas fa-arrow-right"></i></a>
+												</div>
+												
+											</div>
+											
 										</div>
-										
+			
 									</div>
 									
-								</div>
-	
-							</div>
-							
-							
-						<?php endforeach; wp_reset_postdata();?>
-					<?php endif; ?>
+									
+								<?php endforeach; wp_reset_postdata();?>
+							<?php endif; ?>
 					
 						</div>
 						

@@ -11,11 +11,13 @@ get_header(); ?>
 		<div class="bg non-retina" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/bg_started.jpg);"></div>
 		<div class="bg retina" style="background-image: url(<?php bloginfo('template_directory'); ?>/images/bg_started@2x.jpg);"></div>
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<h1>Delivering clarity,<br>
 			efficiency, and results</h1>
 			<p>This is not a solo flight. We’re here to help you experience BlueStar’s outcomes in your organization.</p>

@@ -3,11 +3,13 @@
 <div class="body">
 	<div class="page-head">
 		<div class="container">
+<!--
 			<?php
 				if ( function_exists('yoast_breadcrumb') ) {
 					yoast_breadcrumb('<div class="breadcrumbs">','</div>');
 				}
 			?>
+-->
 			<h1>Search: <span><?php  echo get_search_query(); ?></span></h1>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-<section class="devices-care-team module background-<?php the_sub_field('background_color');?> <?php if(get_sub_field('remove_top_padding') == 'true'):?>no-tp<?php endif;?> <?php if(get_sub_field('remove_bottom_padding') == 'true'):?>no-bp<?php endif;?>">
+<section class="devices-care-team module show-for-xmedium background-<?php the_sub_field('background_color');?> <?php if(get_sub_field('remove_top_padding') == 'true'):?>no-tp<?php endif;?> <?php if(get_sub_field('remove_bottom_padding') == 'true'):?>no-bp<?php endif;?>">
 	<div class="grid-container">
 		
 		<div class="grid-x grid-padding-x align-middle align-justify">	

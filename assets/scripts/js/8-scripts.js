@@ -510,6 +510,7 @@ $(document).ready(function() {
 
 
 // Flexable Content wraps for Fancy Background
+/*
 	$( ".blue-gradient" ).wrapAll( "<div class='blue-gradient-wrap' />");
 
 	$( ".split-slider-container" ).wrapAll( "<div class='css-blue-gradient-wrap' />");
@@ -520,6 +521,7 @@ $(document).ready(function() {
 
 	
 	$( ".blue-gradient-top-bottom" ).wrapAll( "<div class='blue-gradient-top-bottom-wrap' />");
+*/
 	
 		
 // 	Cost Savings Calculator

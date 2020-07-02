@@ -11,11 +11,11 @@ Template Name: Clinical Bibliography Page
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 	
-					<div class="cell small-12 mobile-8">
+					<div class="cell small-12 xmedium-8 large-7">
 										
 						<h1><?php the_field('heading');?></h1>
 						
-						<ul class="accordion" data-accordion>
+						<ul class="accordion" data-allow-all-closed="true" data-accordion>
 						
 							
 							<?php
@@ -105,13 +105,11 @@ Template Name: Clinical Bibliography Page
 					
 					</div>
 					
-					<div class="image-wrap cell small-12 mobile-4">
-						<?php 
-						$image = get_field('image');
-						if( !empty( $image ) ): ?>
-						    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-						<?php endif; ?>
-					</div>
+					<aside class="sidebar blog-form-sidebar cell small-12 xmedium-4 large-offset-1">
+						<div class="inner">
+							<?php dynamic_sidebar( 'sidebar-news-events' ) ?>
+						</div>
+					</aside>
 					
 										
 				</div>
