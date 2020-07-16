@@ -83,6 +83,8 @@ add_image_size( 'blog_thumb_2x', 788, 560, true);
 
 add_image_size( 'resource_card',646, 462, true);
 
+add_image_size( 'resource_slider_card',480, 714, true);
+
 add_image_size( 'three_col_polaroids_card',400, 298, true);
 
 add_action('init', 'custom_post_type_news', 0);

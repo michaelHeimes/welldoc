@@ -229,8 +229,11 @@
 				border-radius: 8px;
 				padding: 1.25em;
 				
-			&:hover h3 {
+			&:hover {
 				color: $black;
+				h3 {
+					color: $black;
+				}
 			}
 				
 				.heading-wrap {

@@ -2,6 +2,7 @@
 	position: relative;
 	background: $brand-blue;
 	min-height: calc(100vh - 65px);
+	width: 100% !important;
 	
 	.left-wrap {
 		position: absolute;
@@ -132,6 +133,7 @@
 				line-height: 1.045;
 				font-family: 'museo-sans-display', 'museo-sans', Helvetica, Roboto, Arial, sans-serif;	
 				font-weight: 900;
+				padding-bottom: 0.35em;
 				
 				@include breakpoint(xmedium) {
 					font-size: rem-calc(72);
@@ -140,9 +142,19 @@
 			}
 			
 			p {
+				font-weight: 300;
+				color: $white;
+				letter-spacing: 0.75px;
+				text-align: center;
+				line-height: 1.16666;
 				padding-left: 2em;
 				padding-right: 2em;
 				text-align: center;
+				
+				@include breakpoint(xmedium) {
+					font-size: rem-calc(24);
+				}
+				
 			}
 						
 		}

@@ -116,6 +116,23 @@ $(document).ready(function() {
 // 	Hero scroll to #next
 	if ($(".scroll-down-anchor").length) {
 		
+	var downArrowBounce = new TimelineMax({repeat:-1, delay: 0, repeatDelay: 1});
+	var dab = $("a.scroll-down-anchor i")
+	var duration = 1;
+	
+	downArrowBounce
+	.to(dab, duration / 6, {y:12, ease:Power1.easeOut})
+	.to(dab, duration / 6, {y:-18, ease:Power2.easeOut})
+	.to(dab, duration / 4, {y:0, ease:Bounce.easeOut});
+	   
+// 	Hero Arrow Hover Bounce
+	$("dab").on("mouseenter", function() {
+	  TweenMax.to(this, duration / 4, {y:-12, ease:Power2.easeOut});
+	  TweenMax.to(this, duration / 2, {y:0, ease:Bounce.easeOut, delay:duration / 4});
+	});
+	
+	
+		
 		$(document).on('click', 'a.scroll-down-anchor', function(ev) {
 
 		 ev.preventDefault();
@@ -130,6 +147,8 @@ $(document).ready(function() {
 		
 	}
 	
+	
+
 		
 // Guide Modal on Clinicians Page 
 	if ($("#clinicians-form-modal").length) {

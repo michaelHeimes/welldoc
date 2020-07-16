@@ -171,7 +171,7 @@
 									$link_target = $link['target'] ? $link['target'] : '_self';
 								if( $link ):?> 	
 								
-									<a class="platform-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="ps-link cell shrink">
+									<a class="platform-link show-for-large" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="ps-link cell shrink">
 										<?php echo esc_html($link_title); ?>
 									</a>
 									

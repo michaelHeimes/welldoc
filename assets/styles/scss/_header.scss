@@ -70,7 +70,8 @@
 	padding-bottom: 1.25em;
 	z-index: 999;
 	width: 100% !important;
-	
+	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.20), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
+
 	a.platform-link,
 	.main-menu a {
 		font-weight: 900;
@@ -80,9 +81,19 @@
 		text-align: center;
 		line-height: 1.14;
 		text-transform: uppercase;
+		transition: 0.3s ease;
+		
+	&:hover {
+		color: #636676;
+	}
 	
 		&.ps-link {
 			color: $brand-blue;
+			
+		&:hover {
+			color: #095CB0;
+		}
+			
 		}	
 	
 	}

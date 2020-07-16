@@ -10,7 +10,14 @@
 				<div class="cell small-12">
 					
 					<div class="text">
+						
+						<?php if( get_post_type(get_the_ID()) == 'post'):?>
+						<div><a href="<?php echo home_url();?>/users-blog">Back to Welldoc Users Blog</a></div>
+						<?php endif;?>
+						
+						<?php if( get_post_type(get_the_ID()) == 'insights'):?>
 						<div><a href="<?php echo home_url();?>/resource-library">Back to Welldoc Resource Library</a></div>
+						<?php endif;?>
 						
 						<h1><?php echo the_title();?></h1>
 						
