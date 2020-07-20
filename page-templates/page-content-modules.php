@@ -2474,7 +2474,7 @@ Template Name: Content Modules
 							
 							<?php
 							$imgID = get_sub_field('image');
-							$imgSize = "resource_card"; // (thumbnail, medium, large, full or custom size)
+							$imgSize = "resource_slider_card"; // (thumbnail, medium, large, full or custom size)
 							$imgArr = wp_get_attachment_image_src( $imgID, $imgSize );
 							?>
 							
