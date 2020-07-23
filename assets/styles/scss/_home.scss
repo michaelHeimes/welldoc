@@ -188,7 +188,7 @@
 			letter-spacing: 0.11px;
 			font-weight: 700;
 			left: 50%;
-			bottom: 90px;
+			bottom: 110px;
 			transform: translateX(-50%);	
 			
 			i {
@@ -229,10 +229,14 @@
 				border-radius: 8px;
 				padding: 1.25em;
 				
+				h3 {
+					transition: color 0.25s ease;
+				}
+				
 			&:hover {
 				color: $black;
 				h3 {
-					color: $black;
+					color: $hover-blue;
 				}
 			}
 				
@@ -441,6 +445,7 @@
 	
 	
 	.approach {
+		overflow: hidden;
 		background-color: $gray-bg;
 		padding-top: 5.1em;
 		

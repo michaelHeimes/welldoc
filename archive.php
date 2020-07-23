@@ -304,41 +304,33 @@
 		
 	
 		<div class="post-blog-row post-row">
-			<div class="grid-container">
-				<section class="post-lists featured grid-x grid-padding-x">
 
 					<?php if(is_post_type_archive('insights') || is_tax('resource-audience') || is_tax('type-insights')):?>
-						
-						
-				    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					 
-							<?php get_template_part( 'templates/loop', 'insight' ); ?>
-						    
-						<?php endwhile; ?>	
-		
-						<?php endif; ?>	
-						
-						
+					
+						<?php
+							$term = get_queried_object();
+							$term_slug = $term->slug;
+							$tax_slug = get_query_var('taxonomy');;
+						?>
+												
+						<?php echo do_shortcode('[ajax_load_more id="9851027870" taxonomy="' . $tax_slug . '" taxonomy_terms="' . $term_slug . '" taxonomy_operator="IN" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="insights" scroll_container="post-lists transition_container="false" featured grid-x grid-padding-x"]');?>
+												
 					<?php else:?>
 					
+						
+						<?php
+							$cat = get_category( get_query_var( 'cat' ) );
+							$cat_slug = $cat->slug;							
+						?>
 					
-				    	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					 
-							<?php get_template_part( 'templates/loop', 'post' ); ?>
-						    
-						<?php endwhile; ?>	
-		
-						<?php endif; ?>	
+						<?php echo do_shortcode('[ajax_load_more id="5429107025" category="' . $cat_slug . '" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="post" scroll_container="post-lists transition_container="false" grid-container"]');?>
 					
 					
 					<?php endif;?>
 
-				</section>
 	
-				<?php get_template_part( 'parts/nav', 'blog-pagination' ); ?>
-
+<!-- 				<?php get_template_part( 'parts/nav', 'blog-pagination' ); ?> -->
 	
-			</div>
 		</div>
 	
 	<?php endif;?>

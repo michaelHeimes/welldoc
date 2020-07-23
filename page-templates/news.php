@@ -137,7 +137,9 @@ Template Post Type: page
 				</div>
 			
 				<aside class="sidebar blog-form-sidebar cell small-12 xmedium-4">
-					<?php dynamic_sidebar( 'sidebar-news-events' ) ?>
+					<div class="inner">
+						<?php dynamic_sidebar( 'sidebar-news-events' ) ?>
+					</div>
 				</aside>
 			
 			</div>

@@ -34,7 +34,7 @@ article.post-card {
 	.inner {
 		height: 100%;
 		padding: 2.1em 1.7em;
-		background-image: linear-gradient(180deg, #016ECD 2%, #6DD5FA 100%);
+		background-color: $brand-gray;
 		border-radius: 4px;
 		color: $white;
 									
@@ -51,18 +51,17 @@ article.post-card {
 			padding-bottom: 0.85em;
 		}		
 		
-		a.btn.outline,
+		a.btn.blue,
 		.gform_wrapper .gform_footer input[type=submit] {
 			display: block;
 			font-weight: 500;
 			font-size: rem-calc(13);
 			color: $white;
-			background: transparent;
+			background: $brand-blue;
 			letter-spacing: 0.41px;
 			text-align: center;
 			text-transform: none;
 			margin-bottom: 3.8em;
-			border: 3px solid #fff;
 			border-radius: 30px;
 			line-height: 1.18;
 			padding: 10px 30px 8px;

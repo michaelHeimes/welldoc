@@ -50,11 +50,15 @@ $(document).ready(function() {
 	if ($(".hero-banner.height-full").length) {
 		
 		function setHeight() {
+			
 			var $alertHeight = $("#alert").outerHeight(true);
 			var $headerHeight = $(".header").outerHeight(true);	
 			var $windowHeight = $(window).innerHeight();
+			var $reduction = $alertHeight + $headerHeight;
+						
+			var	$heroHeight = $windowHeight - $reduction;
 			
-			var	$heroHeight = $windowHeight - ($alertHeight + $headerHeight);
+			console.log($reduction);
 									
 			$(".hero-banner.height-full").css("min-height", $heroHeight);
 						
@@ -111,7 +115,6 @@ $(document).ready(function() {
 			
 		
 	}
-
 	
 // 	Hero scroll to #next
 	if ($(".scroll-down-anchor").length) {
@@ -147,8 +150,254 @@ $(document).ready(function() {
 		
 	}
 	
+
+//  Platform Cards	
+	if($('.platform-cards').length){
+		$('.platform-cards').each(function() {
+			
+		var $cards = $(this).find(".single-card");
+		
+		var stagger_cards = new TimelineMax();
+				
+		stagger_cards
+		.staggerFromTo($cards, 1, {y: 70, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: Back.easeOut}, 0.15);
+		
+			var scene = new ScrollMagic.Scene({
+	        triggerElement: this,
+	        triggerHook: "onEnter",
+// 	        reverse: false,
+	        offset: 300
+			})
+			.setTween(stagger_cards)
+			.addTo(controller);
+
+			});	
+	}
+
+
+//  Three Icon Top Copy Cards	
+	if($('.three-col-icon-top-copy').length){
+		$('.three-col-icon-top-copy').each(function() {
+			
+		var $cards = $(this).find(".single-card");
+		
+		var stagger_cards = new TimelineMax();
+				
+		stagger_cards
+		.staggerFromTo($cards, 1, {y: 70, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: Back.easeOut}, 0.15);
+		
+			var scene = new ScrollMagic.Scene({
+	        triggerElement: this,
+	        triggerHook: "onEnter",
+// 	        reverse: false,
+	        offset: 300
+			})
+			.setTween(stagger_cards)
+			.addTo(controller);
+
+			});	
+	}
+
+
+//  Employer Resources Module	
+	if($('.employer-resources.module').length){
+		$('.employer-resources.module').each(function() {
+			
+		var $cards = $(this).find(".single-card");
+		
+		var stagger_cards = new TimelineMax();
+				
+		stagger_cards
+		.staggerFromTo($cards, 1, {y: 70, autoAlpha: 0}, {y: 0, autoAlpha: 1, ease: Back.easeOut}, 0.15);
+		
+			var scene = new ScrollMagic.Scene({
+	        triggerElement: this,
+	        triggerHook: "onEnter",
+// 	        reverse: false,
+	        offset: 300
+			})
+			.setTween(stagger_cards)
+			.addTo(controller);
+
+			});	
+	}
+	
+	
+// Home Page Platform Solutions	
+	if ($('.platform-solutions').length) {
+		
+		$('.platform-solutions .cube-rows .single-row:nth-child(odd)').each(function(index, element) {
+			
+			var $h2 = $(this).find('h2');
+			var $p = $(this).find('p');
+			var $a = $(this).find('a');
+
+			
+			var tween = new TimelineMax()
+			.fromTo($h2, 0.5, {x:-80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut})
+			.fromTo($p, 0.5, {x:-80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4")
+			.fromTo($a, 0.5, {x:-80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4");
+			
+			new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: 'onCenter',
+// 			reverse: false,
+			})
+			.setClassToggle( this, 'in-view')
+			.setTween(tween)
+			.addTo(controller);
+			
+		});
+
+		$('.platform-solutions .cube-rows .single-row:nth-child(even)').each(function(index, element) {
+			
+			var $h2 = $(this).find('h2');
+			var $p = $(this).find('p');
+			var $a = $(this).find('a');
+
+			
+			var tween = new TimelineMax()
+			.fromTo($h2, 0.5, {x:80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut})
+			.fromTo($p, 0.5, {x:80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4")
+			.fromTo($a, 0.5, {x:80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4");
+			
+			new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: 'onCenter',
+// 			reverse: false,
+			})
+			.setTween(tween)
+			.addTo(controller);
+			
+		});
+		
+	}
+
+
+//  Text Image Sets	
+	if ($('.text-image-set').length) {
+		
+		$('.text-image-set.image-right').each(function(index, element) {
+			
+			var $h3 = $(this).find('h3');
+			var $p = $(this).find('.copy-wrap');
+			var $a = $(this).find('a');
+
+			
+			var tween = new TimelineMax()
+			.fromTo($h3, 0.5, {x:-80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut})
+			.fromTo($p, 0.5, {x:-80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4")
+			.fromTo($a, 0.5, {x:-80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4");
+			
+			new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: 'onCenter',
+// 			reverse: false,
+			})
+			.setTween(tween)
+			.addTo(controller);
+			
+		});
+
+		$('.text-image-set.image-left').each(function(index, element) {
+			
+			var $h3 = $(this).find('h3');
+			var $p = $(this).find('.copy-wrap');
+			var $a = $(this).find('a');
+
+			
+			var tween = new TimelineMax()
+			.fromTo($h3, 0.5, {x:80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut})
+			.fromTo($p, 0.5, {x:80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4")
+			.fromTo($a, 0.5, {x:80, autoAlpha: 0}, {x: 0, autoAlpha: 1, ease: Power2.easeOut}, "-=0.4");
+			
+			new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: 'onCenter',
+// 			reverse: false,
+			})
+			.setTween(tween)
+			.addTo(controller);
+			
+		});
+		
+	}
 	
 
+//	Circles
+	if ($(".yellow.circle").length) {
+		
+		var $yc = $(".yellow.circle");
+		
+		TweenMax.set($yc, {x:0, y:0, scaleX:1, scaleY:1});
+		
+		TweenMax.to($yc, 15, {
+		  bezier:[{x:20, y:0, scaleX:1, scaleY:1}, {x:0, y:20, scaleX:1.1, scaleY:1.1}, {x:-20, y:20, scaleX:1.1, scaleY:1.1}, {x:-20, y:0, scaleX:1.1, scaleY:1.1}, {x:-10, y:20, scaleX:1, scaleY:1}, {x:0, y:0, scaleX:1, scaleY:1}],
+		  repeat:-1,
+		   ease: Power0.easeNone,
+		});	
+		
+	}
+
+	if ($(".red.circle").length) {
+		
+		var $rc = $(".red.circle");
+		
+		TweenMax.set($rc, {x:0, y:0, scaleX:1, scaleY:1});
+		
+		TweenMax.to($rc, 20, {
+		  bezier:[{x:-10, y:20, scaleX:1, scaleY:1}, {x:-20, y:0, scaleX:1.1, scaleY:1.1}, {x:-20, y:20, scaleX:1.1, scaleY:1.1}, {x:0, y:20, scaleX:1.1, scaleY:1.1}, {x:20, y:0, scaleX:1, scaleY:1},{x:0, y:0, scaleX:1, scaleY:1}],
+		  repeat:-1,
+		   ease: Power0.easeNone,
+		});	
+		
+	}
+	
+	
+// Approach Section
+	if ($(".approach").length) {
+		
+		var approachHand = new TimelineMax()
+		
+		approachHand
+		.fromTo(".approach .right img", 1.4, {y: 100, x: -60, scale: 0.8}, {y: 0, x: 0, scale: 1, ease: "expo.out"} )
+		
+			new ScrollMagic.Scene({
+			triggerElement: ".approach .right img",
+			triggerHook: 'onCenter',
+// 			reverse: false,
+			})
+			.setTween(approachHand)
+			.addTo(controller);
+		
+	}
+	
+	
+// Blue Squares
+	if ($(".blue-squares").length) {
+		$('.blue-squares .cube').each(function(index, element) {
+		
+			var $logos = $(this).find('.logos');
+			var $h2 = $(this).find('h2');
+			var $p = $(this).find('p');
+			var $a = $(this).find('a');
+			
+			var tween = new TimelineMax()
+			.fromTo($logos, 0.5, {autoAlpha: 0}, {autoAlpha: 1, ease: Power2.easeOut})
+			.fromTo($h2, 0.5, {autoAlpha: 0}, {autoAlpha: 1, ease: Power2.easeOut}, "-=0.4")
+			.fromTo($p, 0.5, {autoAlpha: 0}, {autoAlpha: 1, ease: Power2.easeOut}, "-=0.4")
+			.fromTo($a, 0.5, {autoAlpha: 0}, {autoAlpha: 1, ease: Power2.easeOut}, "-=0.4");
+			
+			new ScrollMagic.Scene({
+			triggerElement: this,
+			triggerHook: 'onCenter',
+// 			reverse: false,
+			})
+			.setTween(tween)
+			.addTo(controller);			
+					
+		});
+	}
 		
 // Guide Modal on Clinicians Page 
 	if ($("#clinicians-form-modal").length) {
@@ -211,10 +460,59 @@ $(document).ready(function() {
 
 			tlRight.play();
 						
-		};
+		}
 			
 	}
 	
+	
+// Line Icon Animation
+	window.onload = function(){
+		
+		const li = new TimelineMax({repeat: -1, delay: 0});
+		
+		
+		li
+		.set('.bars span:nth-child(1)', {height:"3px"})
+		.set('.bars span:nth-child(2)', {height:"5px"})
+		.set('.bars span:nth-child(3)', {height:"9px"})
+		.set('.bars span:nth-child(4)', {height:"3px"})
+		.set('.bars span:nth-child(5)', {height:"7px"})
+		.set('.bars span:nth-child(6)', {height:"4px"})
+		
+		.to('.bars span:nth-child(1)', .2, {height:"9px", ease: "expo.out"})
+		.to('.bars span:nth-child(1)', .2, {height:"3px", ease: "expo.out"})
+
+		.to('.bars span:nth-child(4)', .2, {height:"9px", ease: "expo.out"})
+		.to('.bars span:nth-child(4)', .2, {height:"3px", ease: "expo.out"})
+				
+		.to('.bars span:nth-child(3)', .2, {height:"3px", ease: "expo.out"})
+		.to('.bars span:nth-child(3)', .2, {height:"9px", ease: "expo.out"})
+		
+		.to('.bars span:nth-child(6)', .2, {height:"9px", ease: "expo.out"}, "-=0.3")
+		.to('.bars span:nth-child(6)', .2, {height:"4px", ease: "expo.out"})
+		
+		.to('.bars span:nth-child(3)', .2, {height:"3px", ease: "expo.out"})
+		.to('.bars span:nth-child(3)', .2, {height:"9px", ease: "expo.out"})
+		
+		.to('.bars span:nth-child(5)', .2, {height:"9px", ease: "expo.out"}, "-=0.3")
+		.to('.bars span:nth-child(5)', .2, {height:"7px", ease: "expo.out"})
+		
+		.to('.bars span:nth-child(4)', .2, {height:"9px", ease: "expo.out"})
+		.to('.bars span:nth-child(4)', .2, {height:"3px", ease: "expo.out"})
+
+		.to('.bars span:nth-child(1)', .2, {height:"9px", ease: "expo.out"}, "-=0.1")
+		.to('.bars span:nth-child(1)', .2, {height:"3px", ease: "expo.out"})		
+		
+		.to('.bars span:nth-child(2)', .2, {height:"9px", ease: "expo.out"})
+		.to('.bars span:nth-child(2)', .2, {height:"5px", ease: "expo.out"})
+		
+		.to('.bars span:nth-child(6)', .2, {height:"9px", ease: "expo.out"}, "-=0.3")
+		.to('.bars span:nth-child(6)', .2, {height:"4px", ease: "expo.out"});
+
+		li.play();	
+		
+	
+	}
 	
 // Back Page Line Animation
 	if ($(".back-page-animated-lines").length) {
@@ -668,8 +966,8 @@ $(document).ready(function() {
 		
 	}
 	
+	var $fadeIn = $('.fade-in');
 
-/*
 	if ($($fadeIn).length) {
 		
 		$($fadeIn).each(function() {
@@ -689,7 +987,6 @@ $(document).ready(function() {
 		});
 		
 	};	
-*/
 	
 	
 /*
@@ -1912,7 +2209,6 @@ $( ".ui-accordion-header" ).each(function( index ) {
 		var pinDuration = (3000);
 		var scrollDuration = (2500);
 		var tweenOffset = 500;
-		var scrollOffset = -(544 * 3);
 			
 		var scene = new ScrollMagic.Scene({
 		        triggerElement: ".product-panels-wrap",
@@ -1976,6 +2272,37 @@ $( ".ui-accordion-header" ).each(function( index ) {
 		})
 		.setClassToggle(".product-panels-wrap", "scene-6")
 		.addTo(controller);	
+		
+		
+		$(document).on('click', '.label-wrap.p-1 .label-heading', function(e) {
+			event.preventDefault();
+			console.log("clicked-1");
+			TweenMax.to(window,.3, {scrollTo:{y:500}, ease: "expo.out"});
+		});		
+
+		$(document).on('click', '.label-wrap.p-2 .label-heading', function(e) {
+			event.preventDefault();
+			console.log("clicked-2");
+			TweenMax.to(window,.3, {scrollTo:{y:1000}, ease: "expo.out"});
+		});	
+		
+		$(document).on('click', '.label-wrap.p-3 .label-heading', function(e) {
+			event.preventDefault();
+			console.log("clicked-3");
+			TweenMax.to(window,.3, {scrollTo:{y:1700}, ease: "expo.out"});
+		});	
+		
+		$(document).on('click', '.label-wrap.p-4 .label-heading', function(e) {
+			event.preventDefault();
+			console.log("clicked-4");
+			TweenMax.to(window,.3, {scrollTo:{y:2200}, ease: "expo.out"});
+		});	
+		
+		$(document).on('click', '.label-wrap.p-5 .label-heading', function(e) {
+			event.preventDefault();
+			console.log("clicked-5");
+			TweenMax.to(window,.3, {scrollTo:{y:2700}, ease: "expo.out"});
+		});	
 
 	}
 

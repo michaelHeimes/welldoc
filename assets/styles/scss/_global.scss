@@ -30,6 +30,11 @@ PAGE TOPS
 SIDEBARS
 *********************/
 .blog-form-sidebar {
+	
+	.inner {
+		background-color: $gray-bg;
+	}
+	
 	h3 {
 		color: $black;
 	}
@@ -377,7 +382,8 @@ ul.slick-dots {
 TYPOGRAPHY
 *********************/
 h2.small-heading,
-h3.small-heading {
+h3.small-heading,
+.small-heading {
 	font-size: rem-calc(14);
     font-weight: 900;
     text-transform: uppercase;
@@ -385,15 +391,74 @@ h3.small-heading {
 	&.w-icon,
 	&.w-icon a {
 		display: flex;
+		align-items: baseline;
 		letter-spacing: 1.5px;
 		line-height: 1.42;
 		
-		img {
+		.bars {
 			margin-left: 0.7em;
+			width: 22px;
+			height: 9px;
+			position: relative;
+			
+			span {
+				position: absolute;
+				bottom: 0;
+				display: block;
+				width: 2px;
+				
+			&:nth-child(1) {
+				height: 3px;
+				left: 0;
+			}
+
+			&:nth-child(2) {
+				height: 5px;
+				left: 4px;
+			}
+			
+			&:nth-child(3) {
+				height: 9px;
+				left: 8px;
+			}
+			
+			&:nth-child(4) {
+				height: 3px;
+				left: 12px				
+			}
+			
+			&:nth-child(5) {
+				height: 7px;
+				left: 16px;
+			}
+			
+			&:nth-child(6) {
+				height: 4px;
+				right: 0;
+			}
+							
+			}
+			
+		&.white {
+			span {
+				background: $white;
+			}
+		}
+
+		&.black {
+			span {
+				background: #3d4456;
+			}
+		}
+			
 		}
 		
 	}
     
+}
+
+.small-heading.w-icon {
+	display: block;
 }
 
 li.small-heading > a {

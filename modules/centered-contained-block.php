@@ -4,7 +4,7 @@
 			
 			<div class="cell small-12">
 			
-				<div class="inner background-<?php the_sub_field('background_color');?>">	
+				<div class="inner background-<?php the_sub_field('background_color');?> fade-in">	
 				
 					<div class="grid-x grid-padding-x align-middle">
 		

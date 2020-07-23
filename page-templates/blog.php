@@ -95,25 +95,12 @@ Template Post Type: page
 
 	<div class="post-blog-row post-row">
 		<div class="grid-container">
-			<section class="post-lists featured grid-x grid-padding-x">
-				
-				<?php $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1; ?>
-				<?php query_posts( array(
-					'post_type' => 'post',
-// 					'post__not_in' => $featured_post_ids,
-					'paged' => $paged,
-					'post_status' => array('publish'),
-					'posts_per_page' => 5,
-				) ); ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-				
-					<?php get_template_part( 'templates/loop', 'post' ); ?>
+						
+			<?php echo do_shortcode('[ajax_load_more id="5429107025" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="post" scroll_container="post-lists transition_container="false" featured grid-x grid-padding-x"]');?>
 			
-				<?php endwhile; ?>
-				
-			</section>
 			
-			<?php get_template_part( 'parts/nav', 'blog-pagination' ); ?>
+			
+<!-- 			<?php get_template_part( 'parts/nav', 'blog-pagination' ); ?> -->
 			
 			<?php wp_reset_query(); ?>
 		</div>

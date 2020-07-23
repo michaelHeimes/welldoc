@@ -57,7 +57,7 @@
 		
 			<?php if ( $social_facebook_url = get_field( 'social_facebook_url', 'option' ) ) : ?>
 			<div class="text-center">		
-				<a class="btn outline" href="<?php echo $social_facebook_url; ?>" target="_blank">
+				<a class="btn blue" href="<?php echo $social_facebook_url; ?>" target="_blank">
 					<i class="fab fa-facebook"></i> Like us on Facebook
 				</a>
 			</div>

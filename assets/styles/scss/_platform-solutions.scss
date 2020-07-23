@@ -6,6 +6,7 @@
 	
 	.left-wrap {
 		position: absolute;
+		z-index: 1;
 		height: 80%;
 		top: 46%;
 		left: 0px;
@@ -52,6 +53,7 @@
 		}
 		
 			.label-heading {
+				cursor: pointer;
 				font-size: rem-calc(16);
 				color: $white;
 				letter-spacing: 0;

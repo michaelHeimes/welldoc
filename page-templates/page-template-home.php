@@ -235,7 +235,9 @@ Template Name: Home Page
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 				
-					<h2 class="small-heading w-icon cell small-12"><?php the_field('pc_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-white.svg"/></h2>
+					<h2 class="small-heading w-icon cell small-12"><?php the_field('pc_heading')?>
+						<div class="white bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>	
+					</h2>
 					
 				</div>
 					
@@ -293,7 +295,9 @@ Template Name: Home Page
 				
 					<div class="top cell small-12 text-center">
 				
-						<h2 class="small-heading w-icon align-center"><?php the_field('ps_small_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-dark.svg"/></h2>
+						<h2 class="small-heading w-icon align-center"><?php the_field('ps_small_heading')?>
+							<div class="black bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+						</h2>
 						
 						<h3 class="large-heading"><?php the_field('ps_heading');?></h3>
 						
@@ -365,13 +369,16 @@ Template Name: Home Page
 		</section>
 		
 		
-		<section class="benefits">
+		<section class="benefits fade-in">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 					
 					<div class="top cell small-12 text-center">
 						
-						<h2 class="small-heading w-icon align-center"><?php the_field('ben_small_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-white.svg"/></h2>
+						<h2 class="small-heading w-icon align-center">
+							<?php the_field('ben_small_heading')?>
+							<div class="white bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+						</h2>
 						
 						<h3 class="large-heading"><?php the_field('ben_heading');?></h3>
 						
@@ -414,7 +421,10 @@ Template Name: Home Page
 						
 						<img class="globe" src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/approach-globe.svg"/>
 						
-						<h2 class="small-heading w-icon"><?php the_field('ap_small_heading')?><img src="<?php echo home_url() ?>/wp-content/themes/welldoc/assets/images/bars-dark.svg"/></h2>
+						<h2 class="small-heading w-icon">
+							<?php the_field('ap_small_heading')?>
+							<div class="black bars"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+						</h2>
 						
 						<h3 class="large-heading text-left"><?php the_field('ap_heading');?></h3>	
 						
@@ -559,7 +569,7 @@ Template Name: Home Page
 		</section>
 		
 		
-		<section class="text-image-set image-right">
+		<section class="text-image-set image-left">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x align-middle">			
 			
@@ -659,7 +669,7 @@ Template Name: Home Page
 			</div>
 		</section>
 		
-		<section class="quote-cards">
+		<section class="quote-cards fade-in">
 			<div class="grid-container">
 				<div class="grid-x grid-padding-x">
 					
