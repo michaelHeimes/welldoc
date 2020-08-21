@@ -102,52 +102,7 @@
 				<?php endif;?>		
 				
 			<?php endif; ?>
-			
-			
-<!--
-			<?php if (is_page(3663)):?>
-	 
-				<div id="clinicans-top-bar">
-					<div class="grid-container">
-						<p><?php the_field('top_bar_download_heading');?></p>
-	
-						<button><i class="fas fa-file-download"></i> Download Now</button>
-					</div>
-				</div>
-	
-			<?php endif;?>
--->
-				
-	<!--
-			<header class="header sticky-header">
-				<div class="grid-container">
-					<div class="grid-x grid-padding-x align-justify">
 						
-						<div class="left cell shrink">
-						
-							<div class="takover-trigger cell shrink"><span></span><span></span><span></span></div>
-						
-							<a href="<?php echo home_url() ?>" class="logo cell shrink">
-								<img class="white-logo" src="<?php echo get_template_directory_uri() ?>/images/logo.svg" alt="<?php bloginfo('name'); ?>" />
-							</a>
-							
-						</div>
-						
-						<div class="right cell shrink">
-							
-							<div class="show-for-xmedium">
-								<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'main-menu', 'menu_id' => '', 'container' => 'nav', 'depth' => 0 ) ); ?>
-							</div>
-							
-							<div class="menu-trigger hide-for-xmedium"><span></span><span></span><span></span></div>
-							
-						</div>
-						
-					</div>
-				</div>
-			</header>
-	-->
-			
 			<header class="header static-header">
 				<div class="grid-container fluid">
 					<div class="grid-x grid-padding-x align-justify align-middle">
@@ -156,9 +111,17 @@
 							
 							<div class="grid-x grid-padding-x align-middle">
 						
-								<div class="cell shrink">
-									<button id="takover-trigger"><span></span><span></span><span></span></button>
-								</div>
+								<?php 
+								$hide_navigation = get_field('hide_navigation');
+								if( $hide_navigation && in_array('yes', $hide_navigation) ):?>
+								
+								<?php else:?>
+						
+									<div class="cell shrink">
+										<button id="takover-trigger"><span></span><span></span><span></span></button>
+									</div>
+							
+								<?php endif;?>
 							
 								<a href="<?php echo home_url() ?>" class="logo cell shrink">
 									<img class="white-logo" src="<?php echo get_template_directory_uri() ?>/assets/images/logo-blue.svg" alt="<?php bloginfo('name'); ?>" />
@@ -171,9 +134,17 @@
 									$link_target = $link['target'] ? $link['target'] : '_self';
 								if( $link ):?> 	
 								
-									<a class="platform-link show-for-large" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="ps-link cell shrink">
-										<?php echo esc_html($link_title); ?>
-									</a>
+									<?php 
+									$hide_navigation = get_field('hide_navigation');
+									if( $hide_navigation && in_array('yes', $hide_navigation) ):?>
+									
+									<?php else:?>
+									
+										<a class="platform-link show-for-large" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>" class="ps-link cell shrink">
+											<?php echo esc_html($link_title); ?>
+										</a>
+										
+									<?php endif;?>
 									
 								<?php endif;?>							
 															
@@ -181,14 +152,22 @@
 							
 						</div>
 						
-						<div class="right cell shrink">
-							
-							<div class="show-for-large top-bar">
-								<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'main-menu', 'menu_id' => '', 'container' => 'nav', 'depth' => 0 ) ); ?>
-							</div>
-														
-						</div>
+						<?php 
+						$hide_navigation = get_field('hide_navigation');
+						if( $hide_navigation && in_array('yes', $hide_navigation) ):?>
 						
+						<?php else:?>
+
+							<div class="right cell shrink">
+								
+								<div class="show-for-large top-bar">
+									<?php wp_nav_menu( array( 'theme_location' => 'mainmenu', 'menu_class' => 'main-menu', 'menu_id' => '', 'container' => 'nav', 'depth' => 0 ) ); ?>
+								</div>
+															
+							</div>
+
+						<?php endif;?>
+																		
 					</div>
 				</div>
 				

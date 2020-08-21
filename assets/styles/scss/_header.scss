@@ -217,8 +217,8 @@
 		bottom: 0;
 		width: 100%;
 		width: 100vw;
-		height: 100%;
-		height: 100vh;
+		min-height: 100%;
+		min-height: 100vh;
 		overflow: auto;
 		background-color: $brand-gray;
 		
@@ -305,6 +305,7 @@
 						}
 						
 						a {
+							text-transform: none;
 							font-weight: 300;
 							font-size: rem-calc(18);
 							color: rgba(255,255,255,0.75);

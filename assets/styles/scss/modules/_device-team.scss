@@ -1,7 +1,56 @@
+scrollmagic-pin-spacer {
+	transition: all 0.4s ease;
+}
+
+.scrollmagic-pin-spacer.unpinned {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	min-height: 0 !important;
+	height: auto !important;
+	
+	.devices-care-team {
+		.animation-wrap .panel {
+			opacity: 1;
+		}
+		
+		.animation-wrap {
+			.top-arrows,
+			.bottom-arrows  {
+				opacity: 0 !important;
+			}
+		}
+		
+/*
+		img.arrow-1,
+		img.arrow-2,
+		img.arrow-3 {
+			opacity: 1 !important;
+		}
+*/
+		
+	}
+	
+}
+
 .devices-care-team {
-	min-height: 100vh;
+	position: relative;
+	
+&:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $gray-bg;
+}
+	
+// 	min-height: 1000px;
 	
 	.top {
+		position: relative;
     	max-width: 860px;
     	margin: auto;
 	}

@@ -87,9 +87,11 @@ Template Post Type: page
 						<?php if ( $title_position = get_field( 'title_position', $item->ID ) ) : ?>
 						<h4><?php echo $title_position; ?></h4>
 						<?php endif; ?>
+<!--
 						<?php if ( $linkedin_url = get_field( 'linkedin_url', $item->ID ) ) : ?>
 						<a href="<?php echo $linkedin_url; ?>" target="_blank"><i aria-hidden="true" class="fa fa-linkedin-square"></i></a>
 						<?php endif; ?>
+-->
 						<a class="more" href="<?php echo get_permalink($item->ID); ?>">Read Bio <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 					</div>
 				</article>

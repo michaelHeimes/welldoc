@@ -307,13 +307,17 @@
 
 					<?php if(is_post_type_archive('insights') || is_tax('resource-audience') || is_tax('type-insights')):?>
 					
+					<div class="grid-container">
+					
 						<?php
 							$term = get_queried_object();
 							$term_slug = $term->slug;
 							$tax_slug = get_query_var('taxonomy');;
 						?>
 												
-						<?php echo do_shortcode('[ajax_load_more id="9851027870" taxonomy="' . $tax_slug . '" taxonomy_terms="' . $term_slug . '" taxonomy_operator="IN" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="insights" scroll_container="post-lists transition_container="false" featured grid-x grid-padding-x"]');?>
+						<?php echo do_shortcode('[ajax_load_more loading_style="infinite fading-circles" id="9851027870" taxonomy="' . $tax_slug . '" taxonomy_terms="' . $term_slug . '" taxonomy_operator="IN" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="insights" scroll_container="post-lists transition_container="false" featured grid-x grid-padding-x"]');?>
+								
+					</div>
 												
 					<?php else:?>
 					

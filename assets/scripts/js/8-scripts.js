@@ -2135,6 +2135,37 @@ $( ".ui-accordion-header" ).each(function( index ) {
 		var scrollDuration = (2000);
 		var tweenOffset = 500;
 		var scrollOffset = -(544 * 3);
+		
+		$(document).on('click', '#skip-device-animation', function(e) {
+			e.preventDefault();
+			
+			$(".devices-care-team").parent().addClass('unpinned');
+			
+			$(".devices-care-team").parent().removeAttr("style");
+			
+			console.log("clicked");
+			$(".devices-care-team").addClass("disabled");
+			var reset = $("#reset").prop("checked");
+			if ($("#destroyController").prop("checked")) {
+/*
+				controller.destroy(reset);
+				controller = null;
+*/
+				
+				scene = scene.destroy(true);
+				scene = null;
+				controller.destroy(true);
+				controller = null;				
+				
+				
+				
+				
+			} else {
+				scene.destroy(reset);
+			}
+			scene = null;
+			tween = null;			
+		});
 			
 		var scene = new ScrollMagic.Scene({
 		        triggerElement: ".devices-care-team",

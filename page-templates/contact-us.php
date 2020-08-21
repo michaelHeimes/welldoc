@@ -8,7 +8,7 @@ Template Post Type: page
 
 <div class="body">
 	
-	<div class="grid-container container">
+	<div class="grid-container">
 		<div class="contact-wrap grid-x grid-padding-x">
 	
 				<div class="left cell small-12 xmedium-6 xmedium-offset-1">

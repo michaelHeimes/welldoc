@@ -90,7 +90,9 @@
 
 					</div>
 						
-					
+					<div class="text-center">
+						<a href="#" id="skip-device-animation" class="btn blue">Skip Animation</a>
+					</div>
 					
 				</div>				
 						

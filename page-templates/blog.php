@@ -96,7 +96,7 @@ Template Post Type: page
 	<div class="post-blog-row post-row">
 		<div class="grid-container">
 						
-			<?php echo do_shortcode('[ajax_load_more id="5429107025" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="post" scroll_container="post-lists transition_container="false" featured grid-x grid-padding-x"]');?>
+			<?php echo do_shortcode('[ajax_load_more id="5429107025" loading_style="infinite fading-circles" container_type="ul" css_classes="post-lists featured grid-x grid-padding-x" post_type="post" scroll_container="post-lists transition_container="false" featured grid-x grid-padding-x"]');?>
 			
 			
 			

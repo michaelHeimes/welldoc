@@ -241,6 +241,25 @@
 		min-height: 580px;		
 	}
 	
+	.alm-btn-wrap .alm-load-more-btn{
+		background-color: transparent !important;
+		padding: 0 !important;
+		box-shadow: 0 0 0;
+		color: $black;
+		font-size: 0;		
+
+		&.loading,
+		&:hover {
+			background-color: transparent !important;
+			padding: 0 !important;
+			box-shadow: 0 0 0;
+			color: $black;
+			font-size: 0;
+		}
+		
+	}
+	
+/*
 	.blog-pag {
 	
 		&.pagination-full {
@@ -281,6 +300,7 @@
 		}
 		
 	}
+*/
 	
 }
 
