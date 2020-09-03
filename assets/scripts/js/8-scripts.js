@@ -2233,7 +2233,7 @@ $( ".ui-accordion-header" ).each(function( index ) {
 	}
 
 
-// 		Pinned Device-Team Scroll
+// 		Pinned Platform Solutions
 	if($('.product-panels-wrap').length ) {
 
 		var controller = new ScrollMagic.Controller(); 
