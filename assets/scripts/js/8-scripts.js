@@ -2135,6 +2135,9 @@ $( ".ui-accordion-header" ).each(function( index ) {
 		var scrollDuration = (2000);
 		var tweenOffset = 500;
 		var scrollOffset = -(544 * 3);
+		var $next = $('.devices-care-team').next();
+		
+		console.log($next);
 		
 		$(document).on('click', '#skip-device-animation', function(e) {
 			e.preventDefault();
@@ -2143,9 +2146,11 @@ $( ".ui-accordion-header" ).each(function( index ) {
 			
 			$(".devices-care-team").parent().removeAttr("style");
 			
-			console.log("clicked");
 			$(".devices-care-team").addClass("disabled");
 			var reset = $("#reset").prop("checked");
+			
+			TweenMax.to(window,.3, {scrollTo:{y:$next}, ease: "expo.out"});
+			
 			if ($("#destroyController").prop("checked")) {
 /*
 				controller.destroy(reset);
@@ -2155,10 +2160,7 @@ $( ".ui-accordion-header" ).each(function( index ) {
 				scene = scene.destroy(true);
 				scene = null;
 				controller.destroy(true);
-				controller = null;				
-				
-				
-				
+				controller = null;						
 				
 			} else {
 				scene.destroy(reset);
